@@ -1,0 +1,167 @@
+.footer {
+  width: 100%;
+  background-color: #fffbf3;
+  /* Light beige matching screenshot */
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left Column */
+.leftColumn {
+  flex: 0 0 400px;
+  padding: 2rem 40px 2rem 80px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.heading {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #100f0d;
+  margin: 0 0 4rem 0;
+  letter-spacing: -0.02em;
+}
+
+.contactBlock {
+  margin-bottom: 3rem;
+}
+
+.contactBlock:last-child {
+  margin-bottom: 0;
+}
+
+.contactTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #100f0d;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+}
+
+.contactText {
+  font-size: 1.25rem;
+  color: #100f0d;
+  margin: 0;
+}
+
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.socialIcon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.iconImage {
+  object-fit: contain;
+}
+
+/* Right Column (Collage) */
+.rightColumn {
+  flex: 1;
+  position: relative;
+}
+
+.handImageWrapper {
+  position: absolute;
+  bottom: -5px;
+  right: -100px;
+  width: 1000px;
+  height: 1000px;
+  z-index: 5;
+}
+
+.handImage {
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.footerCollage {
+  position: absolute;
+  bottom: 83px;
+  left: 36%;
+  transform: scale(1);
+  z-index: 2;
+  transform-origin: bottom right;
+}
+
+/* Bottom Ribbon */
+.bottomRibbon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  z-index: 4;
+}
+
+.ribbonItem {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftColumn {
+    padding: 4rem 40px;
+    flex: none;
+  }
+
+  .rightColumn {
+    min-height: 600px;
+    width: 100%;
+  }
+
+  .handImageWrapper {
+    width: 350px;
+    height: 350px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .footerCollage {
+    right: 50%;
+    transform: translateX(50%) scale(0.9);
+    transform-origin: bottom center;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftColumn {
+    padding: 3rem 20px;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .rightColumn {
+    min-height: 500px;
+  }
+
+  .handImageWrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .footerCollage {
+    transform: translateX(50%) scale(0.6);
+  }
+}

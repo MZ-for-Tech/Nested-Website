@@ -1,0 +1,90 @@
+.vision {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 6rem 80px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  width: 100%;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 3rem;
+  width: 100%;
+}
+
+.visionImageWrapper {
+  width: 100%;
+  max-width: 981px;
+  aspect-ratio: 981 / 186;
+  position: relative;
+}
+
+.visionImage {
+  object-fit: contain;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #100f0d;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #100f0d;
+  line-height: 1.6;
+}
+
+/* Pattern Footer */
+.patternFooter {
+  width: 100%;
+  height: 60px; /* Standard height for patterned borders, can adjust */
+  position: relative;
+  overflow: hidden;
+  background-color: #fff; /* Added to fix dark transparency */
+}
+
+.patternImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vision {
+    padding: 4rem 20px;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,93 @@
+.foundersSection {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.textContent {
+  flex: 5.5;
+  background-color: #5571fa;
+  padding: 6rem 4rem 6rem 80px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textInner {
+  max-width: 500px;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.imageContent {
+  flex: 4.5;
+  position: relative;
+  background-color: #fcfbf5;
+  min-height: 500px;
+}
+
+.image {
+  object-fit: contain;
+  object-position: center bottom;
+  transform: scale(1.9) translate(-15%, 16%);
+  transform-origin: bottom center;
+}
+
+.bottomBar {
+  width: 100%;
+  height: 30px;
+  background-color: #e5cd4a;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomDecoration {
+  width: 60px;
+  height: 100%;
+  background-color: transparent;
+  /* decorative detail here if needed */
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    flex-direction: column;
+  }
+
+  .textContent {
+    padding: 4rem 20px;
+  }
+
+  .imageContent {
+    min-height: 400px;
+  }
+}

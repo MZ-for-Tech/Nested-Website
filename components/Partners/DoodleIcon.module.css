@@ -1,0 +1,44 @@
+.container {
+  width: 150%;
+  height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+.path {
+  stroke: #f4d94c;
+  stroke-width: 15;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  fill: transparent;
+  animation: drawSquiggle 7s ease-in-out infinite;
+}
+
+@keyframes drawSquiggle {
+  0% {
+    stroke-dashoffset: 1;
+    fill: transparent;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+
+  60%,
+  90% {
+    stroke-dashoffset: 0;
+    fill: #f4d94c;
+  }
+
+  100% {
+    stroke-dashoffset: 1;
+    fill: transparent;
+  }
+}

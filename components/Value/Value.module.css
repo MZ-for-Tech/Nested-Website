@@ -1,0 +1,133 @@
+.value {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fcfaf2; /* exact beige matching Canva */
+  padding: 8rem 80px 6rem 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.yellowBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #fcd436; /* yellow */
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 4rem;
+  align-items: center; /* center the title relative to the list */
+}
+
+.leftColumn {
+  flex: 0 0 35%; /* Fixed width for left column */
+}
+
+.heading {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #100f0d;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.greenText {
+  color: #0ebd5a; /* bright green */
+}
+
+.rightColumn {
+  flex: 1;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* spacing between rows */
+}
+
+.listItem {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.itemTitle {
+  flex: 0 0 30%;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #100f0d;
+  margin: 0;
+  padding-top: 0.2rem; /* visually align with the first line of text */
+}
+
+.itemContent {
+  flex: 1;
+  font-size: 1.125rem;
+  color: #100f0d;
+  line-height: 1.6;
+}
+
+.itemContent p {
+  margin: 0;
+}
+
+.bulletList {
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+  list-style-type: disc;
+}
+
+.bulletList li {
+  margin-bottom: 0.5rem;
+}
+
+.bulletList li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+  
+  .leftColumn {
+    flex: none;
+    width: 100%;
+  }
+  
+  .heading {
+    font-size: 4rem;
+  }
+  
+  .listItem {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .itemTitle {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .value {
+    padding: 6rem 20px 4rem 20px;
+  }
+  
+  .heading {
+    font-size: 3rem;
+  }
+}
