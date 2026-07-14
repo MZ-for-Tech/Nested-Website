@@ -1,0 +1,15 @@
+/* SVG shell — fills whatever size the parent gives it */
+.svg {
+  display: block;
+}
+
+/* Rotating group — same animation name as ClaudeIcon for consistency */
+.group {
+  transform-origin: 60px 60px;
+  animation: cartwheel 6s linear infinite;
+}
+
+@keyframes cartwheel {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
