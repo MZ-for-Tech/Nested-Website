@@ -46,7 +46,7 @@
 
 .content {
   margin-top: 35vh;
-  margin-left: 60px;
+  margin-left: 100px;
   max-width: 800px;
   position: relative;
   z-index: 10;
@@ -69,6 +69,78 @@
   width: 560px;
   height: 560px;
   z-index: 3;
+  animation: collageIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+/* ── Staggered Entrance Animations ── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes collageIn {
+  from { opacity: 0; transform: scale(0.95) translateY(16px); }
+  to   { opacity: 1; transform: scale(1.1) translateY(0); }
+}
+
+.animLogo {
+  animation: fadeDown 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+.animHeading {
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.sideTextWrapper {
+  animation: fadeIn 1s ease 0.5s both;
+}
+
+/* ── Vertical side text (Animated) ── */
+.sideTextWrapper {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.sideText {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 15, 13, 0.2) 0%,
+    rgba(16, 15, 13, 0.2) 40%,
+    #100f0d 50%,
+    rgba(16, 15, 13, 0.2) 60%,
+    rgba(16, 15, 13, 0.2) 100%
+  );
+  background-size: 100% 200%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: textSweep 8s linear infinite;
+}
+
+@keyframes textSweep {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 200%; }
 }
 
 
@@ -121,5 +193,9 @@
   .collage {
     display: none;
     /* Hide collage on small screens for simplicity */
+  }
+
+  .sideTextWrapper {
+    display: none;
   }
 }
