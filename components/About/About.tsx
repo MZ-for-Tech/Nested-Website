@@ -1,45 +1,63 @@
 import Image from "next/image";
 import styles from "./About.module.css";
 
+const ArrowIcon = () => (
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 28 28"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="14" cy="14" r="13" stroke="#fff" strokeWidth="2" />
+    <path
+      d="M10 14H18M18 14L14 10M18 14L14 18"
+      stroke="#fff"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export default function About() {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} aria-label="About Nested United — Smart Operations">
       <div className={styles.container}>
-        {/* Left Column - Office Image */}
+        {/* Left Column - Office Image (padded, not full-bleed) */}
         <div className={styles.leftColumn}>
-          <Image
-            src="/ASSETS/pics/5.png" // Placeholder, assuming 5 is a good office pic based on list, or we will check.
-            alt="Modern Open Office"
-            fill
-            className={styles.image}
-          />
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/ASSETS/pics/5.png"
+              alt="Nested United modern office interior with team collaboration spaces"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className={styles.image}
+            />
+          </div>
         </div>
 
         {/* Right Column - Text Content */}
         <div className={styles.rightColumn}>
-          <h2 className={styles.heading}>About our company</h2>
+          <h2 className={styles.heading}>
+            Smart Operations.<br />
+            Sustainable Growth
+          </h2>
           <p className={styles.text}>
-            Nested is a project operations and development company dedicated to building efficient systems and crafting seamless experiences that drive growth and maximize profitability.
+            We help businesses build efficient operations,
+            improve customer experience,
+            and achieve sustainable growth through
+            professional management and smart systems.
           </p>
-          <p className={styles.text}>
-            We turn ideas into structured, scalable ventures through professional management that emphasizes precision, quality, and exceptional customer experience.
-          </p>
-          <div className={styles.buttonWrapper}>
-            <button className={styles.button}>
-              Take the First Step With Us
+          <div className={styles.buttonRow}>
+            <button type="button" className={styles.button} aria-label="Start your project with Nested United">
+              START YOUR PROJECT
+              <span className={styles.buttonIcon} aria-hidden="true"><ArrowIcon /></span>
             </button>
-            <div className={styles.cursorIcon}>
-              <svg width="60" height="70" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#100f0d" strokeWidth="4" strokeLinecap="round">
-                  <path d="M 12 30 L 4 34" />
-                  <path d="M 13 16 L 6 9" />
-                  <path d="M 24 10 L 26 2" />
-                  <path d="M 36 15 L 43 10" />
-                  <path d="M 40 26 L 49 28" />
-                </g>
-                <path d="M 22 26 L 22 54 L 29 48 L 36 60 L 43 56 L 36 44 L 46 44 Z" fill="#fff" stroke="#100f0d" strokeWidth="4" strokeLinejoin="round" />
-              </svg>
-            </div>
+            <button type="button" className={styles.button} aria-label="Book a consultation with Nested United">
+              BOOK A CONSULTATION
+              <span className={styles.buttonIcon} aria-hidden="true"><ArrowIcon /></span>
+            </button>
           </div>
         </div>
       </div>
