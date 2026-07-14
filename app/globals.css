@@ -12,36 +12,65 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "TT Hoves", var(--font-red-hat), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-red-hat), sans-serif;
 }
 
-/* Custom Colorful Scrollbar */
+/* ── Focus visible (keyboard accessibility) ── */
+:focus-visible {
+  outline: 3px solid #4f72ff;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Remove default focus ring for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Skip to main content (screen readers & keyboard) ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  background: #4f72ff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── Custom Colorful Scrollbar ── */
 ::-webkit-scrollbar {
   width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fffbf3; /* Website's light beige */
+  background: #fffbf3;
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #465ae1, #EE1D52, #ffd834);
   border-radius: 10px;
-  border: 3px solid #fffbf3; /* Pad the thumb to look pill-shaped inside track */
+  border: 3px solid #fffbf3;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -52,4 +81,16 @@ h1, h2, h3, h4, h5, h6 {
 * {
   scrollbar-width: thin;
   scrollbar-color: #EE1D52 #fffbf3;
+}
+
+/* ── Reduce Motion Accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

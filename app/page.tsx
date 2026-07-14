@@ -1,23 +1,30 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero/Hero";
 import About from "@/components/About/About";
-import Value from "@/components/Value/Value";
-import Services from "@/components/Services/Services";
-import Vision from "@/components/Vision/Vision";
-import Partners from "@/components/Partners/Partners";
-import Founders from "@/components/Founders/Founders";
-import Footer from "@/components/Footer/Footer";
+import StructuredData from "./structured-data";
+
+// Lazy-load below-the-fold sections for faster initial paint
+const Value    = dynamic(() => import("@/components/Value/Value"));
+const Services = dynamic(() => import("@/components/Services/Services"));
+const Vision   = dynamic(() => import("@/components/Vision/Vision"));
+const Partners = dynamic(() => import("@/components/Partners/Partners"));
+const Founders = dynamic(() => import("@/components/Founders/Founders"));
+const Footer   = dynamic(() => import("@/components/Footer/Footer"));
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <About />
-      <Value />
-      <Services />
-      <Vision />
-      <Founders />
-      <Partners />
-      <Footer />
-    </main>
+    <>
+      <StructuredData />
+      <main id="main-content" aria-label="Nested United main content">
+        <Hero />
+        <About />
+        <Value />
+        <Services />
+        <Vision />
+        <Partners />
+        <Founders />
+        <Footer />
+      </main>
+    </>
   );
 }
