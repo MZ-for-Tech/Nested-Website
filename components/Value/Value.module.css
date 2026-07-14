@@ -1,133 +1,153 @@
 .value {
   width: 100%;
-  min-height: 100vh;
-  background-color: #fcfaf2; /* exact beige matching Canva */
-  padding: 8rem 80px 6rem 80px;
+  background-color: #fff;
+  padding: 8rem 0;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-.yellowBar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #fcd436; /* yellow */
+  overflow: hidden;
 }
 
 .container {
   display: flex;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
-  gap: 4rem;
-  align-items: center; /* center the title relative to the list */
+  gap: 8rem;
+  align-items: center;
+  padding: 0 2rem;
 }
 
+/* Left Column */
 .leftColumn {
-  flex: 0 0 35%; /* Fixed width for left column */
+  flex: 0 0 45%;
+  position: relative;
+}
+
+/* The yellow decorative block behind the image */
+.imageDecor {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: #ffd834;
+  z-index: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Reverted to landscape to prevent bad cropping */
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-radius: 4px; /* Slight rounding for a premium feel */
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+/* Right Column */
+.rightColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tag {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #4f72ff;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tag::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #4f72ff;
 }
 
 .heading {
-  font-size: 5rem;
-  font-weight: 800;
+  font-size: 4.5rem;
+  font-weight: 900;
   color: #100f0d;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.heading span {
+  color: #4f72ff;
+}
+
+.text {
+  font-size: 1.15rem;
+  color: #444;
+  line-height: 1.8;
   margin: 0;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  max-width: 480px;
+  padding-left: 2rem;
+  border-left: 4px solid #ee1d52;
 }
 
-.greenText {
-  color: #0ebd5a; /* bright green */
-}
-
-.rightColumn {
-  flex: 1;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem; /* spacing between rows */
-}
-
-.listItem {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.itemTitle {
-  flex: 0 0 30%;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #100f0d;
-  margin: 0;
-  padding-top: 0.2rem; /* visually align with the first line of text */
-}
-
-.itemContent {
-  flex: 1;
-  font-size: 1.125rem;
-  color: #100f0d;
-  line-height: 1.6;
-}
-
-.itemContent p {
-  margin: 0;
-}
-
-.bulletList {
-  margin: 0;
-  padding: 0 0 0 1.2rem;
-  list-style-type: disc;
-}
-
-.bulletList li {
-  margin-bottom: 0.5rem;
-}
-
-.bulletList li:last-child {
-  margin-bottom: 0;
-}
-
+/* Responsive */
 @media (max-width: 1024px) {
+  .value {
+    padding: 6rem 0;
+  }
+  
   .container {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 4rem;
   }
-  
-  .leftColumn {
-    flex: none;
-    width: 100%;
-  }
-  
+
   .heading {
-    font-size: 4rem;
-  }
-  
-  .listItem {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .itemTitle {
-    flex: none;
-    width: 100%;
+    font-size: 3.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .value {
-    padding: 6rem 20px 4rem 20px;
+    padding: 4rem 0;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .leftColumn {
+    flex: none;
+    width: 100%;
+    padding: 0 1.5rem; /* Add padding so decor doesn't get cut off */
+    box-sizing: border-box;
   }
   
+  .imageDecor {
+    top: 1rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+  }
+
   .heading {
-    font-size: 3rem;
+    font-size: 2.8rem;
+  }
+
+  .text {
+    font-size: 1.05rem;
+    padding-left: 1.5rem;
   }
 }
