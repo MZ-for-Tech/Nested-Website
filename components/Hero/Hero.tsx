@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Right Column - Background Image */}
       <div className={styles.rightColumn}>
         <Image
-          src="/ASSETS/pics/4.png"
+          src="/ASSETS/pics/building.png"
           alt="Nested United modern office building exterior"
           fill
           priority
@@ -29,13 +29,13 @@ export default function Hero() {
         {/* Logo */}
         <div className={`${styles.logo} ${styles.animLogo}`}>
           <Image
-            src="/ASSETS/logos/1.png"
+            src="/ASSETS/logos/logo.svg"
             alt="Nested United Logo"
             width={360}
             height={150}
             priority
             sizes="(max-width: 768px) 200px, 360px"
-            style={{ objectFit: "contain", objectPosition: "left" }}
+            style={{ objectFit: "contain", objectPosition: "left", width: "360px", maxWidth: "100%", height: "auto" }}
           />
         </div>
 

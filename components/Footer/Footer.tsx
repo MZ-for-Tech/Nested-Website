@@ -42,7 +42,7 @@ export default function Footer() {
       <div className={styles.container}>
         {/* Left Column - Contact Details */}
         <div className={styles.leftColumn}>
-          <h2 className={styles.heading}>Contact</h2>
+          <h2 className={styles.heading}>Ready to Start Your Project?</h2>
 
           <div className={styles.contactBlock}>
             <h3 className={styles.contactTitle}>PHONE</h3>
@@ -57,14 +57,23 @@ export default function Footer() {
           <div className={styles.contactBlock}>
             <h3 className={styles.contactTitle}>SOCIAL</h3>
             <div className={styles.socialList}>
-              <a href="https://www.instagram.com/nestedunited" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-                <InstagramIcon />
+              <a href="https://www.instagram.com/nestedunited" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                <div className={styles.socialIcon}>
+                  <InstagramIcon />
+                </div>
+                <span className={styles.socialText}>Instagram</span>
               </a>
-              <a href="https://www.linkedin.com/company/nested-united/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-                <LinkedInIcon />
+              <a href="https://www.linkedin.com/company/nested-united/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                <div className={styles.socialIcon}>
+                  <LinkedInIcon />
+                </div>
+                <span className={styles.socialText}>LinkedIn</span>
               </a>
-              <a href="https://www.tiktok.com/@nested.united" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-                <TikTokIcon />
+              <a href="https://www.tiktok.com/@nested.united" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                <div className={styles.socialIcon}>
+                  <TikTokIcon />
+                </div>
+                <span className={styles.socialText}>TikTok</span>
               </a>
             </div>
           </div>
@@ -78,7 +87,7 @@ export default function Footer() {
           {/* Hand holding phone */}
           <div className={styles.handImageWrapper}>
             <Image
-              src="/ASSETS/pics/2.png"
+              src="/ASSETS/pics/hand.png"
               alt="Customer Service"
               fill
               className={styles.handImage}

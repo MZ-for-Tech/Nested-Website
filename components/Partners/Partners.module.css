@@ -1,29 +1,25 @@
 .partners {
   width: 100%;
   min-height: 100vh;
-  background-color: #fff;
-  padding: 6rem 80px;
+  background-color: #fffbf3;
   box-sizing: border-box;
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .headingWrapper {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 6rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 6rem 80px 4rem 80px;
   width: 100%;
 }
 
 .line {
   width: 80px;
-  height: 2px;
+  height: 4px;
   background-color: #100f0d;
 }
 
@@ -33,47 +29,50 @@
 }
 
 .heading {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 800;
   color: #100f0d;
   margin: 0;
   letter-spacing: -0.02em;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  text-decoration-thickness: 4px;
+  text-transform: uppercase;
 }
 
 .headingIcon {
   position: absolute;
   top: -30px;
-  right: -50px;
-  width: 60px;
-  height: 60px;
-}
-
-.icon {
-  object-fit: contain;
+  right: -60px;
+  width: 70px;
+  height: 70px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
+  flex: 1; /* Make the grid fill the rest of the height */
 }
 
 .logoWrapper {
   position: relative;
-  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 3rem;
+  background-color: #fffbf3;
+  transition: transform 0.2s ease;
 }
 
 .logo {
   object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%) contrast(120%);
+  opacity: 0.8;
+}
+
+.logoWrapper:hover .logo {
+  filter: grayscale(0%) contrast(100%);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {
@@ -83,34 +82,28 @@
 }
 
 @media (max-width: 768px) {
-  .partners {
-    padding: 4rem 20px;
-  }
-
   .headingWrapper {
+    padding: 4rem 20px;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    margin-bottom: 4rem;
   }
-
   .line {
     width: 40px;
   }
-
   .heading {
     font-size: 2.5rem;
   }
-
   .headingIcon {
     top: -20px;
     right: -30px;
     width: 40px;
     height: 40px;
   }
-
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  }
+  .logoWrapper {
+    min-height: 180px;
   }
 }

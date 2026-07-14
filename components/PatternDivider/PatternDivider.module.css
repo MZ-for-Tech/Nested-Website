@@ -1,0 +1,38 @@
+.divider {
+  width: 100%;
+  height: 120px;
+  background-color: #fffbf3;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+}
+
+.patternContent {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+}
+
+.patternBox {
+  width: 63px;
+  height: 63px;
+  flex-shrink: 0;
+}
+
+/* Ensure the SVG child elements take full width/height properly */
+.patternBox > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive adjustment for speed or height if necessary */
+@media (max-width: 768px) {
+  .patternContainer {
+    height: 48px;
+  }
+  .patternBox {
+    width: 48px;
+    height: 48px;
+  }
+}

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fffbf3;
   --foreground: #171717;
 }
 
@@ -56,6 +56,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .skip-link:focus {
   top: 0;
+}
+
+/* ── Text Selection ── */
+::selection {
+  background-color: #ee1d52;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #ee1d52;
+  color: #ffffff;
 }
 
 /* ── Custom Colorful Scrollbar ── */

@@ -1,0 +1,327 @@
+/* ── Section shell ── */
+.solutions {
+  width: 100%;
+  background-color: #fffbf3;
+  position: relative;
+  padding: 8rem 80px 0 80px; /* matched to Services section padding */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ── Centred main content container ── */
+.content {
+  width: 100%;
+  max-width: 1200px; /* expanded from 960px to match Value / About layout width */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem; /* larger gap between header and grid */
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+/* ── Spinning asterisk (ClaudeIcon) — aligned with content left edge ── */
+.asteriskWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 76px;
+  z-index: 2;
+  border-radius: 0; /* completely sharp square corners */
+  overflow: hidden;
+}
+
+/* ── Header — fully centred ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  max-width: 760px; /* scaled up width */
+  z-index: 1;
+}
+
+.tag {
+  font-size: 0.8rem; /* slightly larger */
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #100f0d;
+  margin: 0;
+}
+
+.heading {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #100f0d;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.highlight {
+  color: #22c55e; /* Brutalist Green */
+}
+
+.description {
+  font-size: 1.15rem;
+  color: #100f0d;
+  line-height: 1.75;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Grid Section (Grid + Side text) ── */
+.gridSection {
+  display: flex;
+  align-items: stretch;
+  gap: 4rem; /* larger gap to side text */
+  width: 100%;
+}
+
+/* ── 3 × 2 grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem; /* larger gap between cards */
+  flex: 1;
+}
+
+/* ── Individual cards ── */
+.card {
+  background: #fffbf3;
+  border-radius: 0; /* Sharp edges */
+  padding: 3rem 2rem 2.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.2s ease;
+  color: #100f0d;
+}
+
+.iconWrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #100f0d;
+  transition: all 0.3s ease;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: inherit;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  color: #100f0d;
+  line-height: 1.65;
+  margin: 0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* ── Colored Hover Effects ── */
+
+/* Yellow Hover (Project Operations) */
+.hoverYellow:hover {
+  background-color: #ffd834;
+  color: #100f0d;
+}
+.hoverYellow:hover .iconWrapper {
+  color: #100f0d;
+}
+.hoverYellow:hover .cardDesc {
+  color: #100f0d;
+}
+
+/* Red Hover (Customer Experience / Hospitality) */
+.hoverRed:hover {
+  background-color: #ee1d52;
+  color: #fff;
+}
+.hoverRed:hover .iconWrapper {
+  color: #fff;
+}
+.hoverRed:hover .cardDesc {
+  color: #fff;
+}
+
+/* Blue Hover (Business Dev / Tech) */
+.hoverBlue:hover {
+  background-color: #4f72ff;
+  color: #fff;
+}
+.hoverBlue:hover .iconWrapper {
+  color: #fff;
+}
+.hoverBlue:hover .cardDesc {
+  color: #fff;
+}
+
+/* Green Hover (Marketing) */
+.hoverGreen:hover {
+  background-color: #22c55e;
+  color: #fff;
+}
+.hoverGreen:hover .iconWrapper {
+  color: #fff;
+}
+.hoverGreen:hover .cardDesc {
+  color: #fff;
+}
+
+/* Black Hover */
+.hoverBlack:hover {
+  background-color: #100f0d;
+  color: #fff;
+}
+.hoverBlack:hover .iconWrapper {
+  color: #fff;
+}
+.hoverBlack:hover .cardDesc {
+  color: #fff;
+}
+
+/* ── Vertical side text wrapper next to grid ── */
+.sideTextWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.sideText {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  /* Gradient setup for the sweep effect */
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 15, 13, 0.2) 0%,
+    rgba(16, 15, 13, 0.2) 40%,
+    #100f0d 50%,
+    rgba(16, 15, 13, 0.2) 60%,
+    rgba(16, 15, 13, 0.2) 100%
+  );
+  background-size: 100% 200%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: textSweep 8s linear infinite;
+}
+
+@keyframes textSweep {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 200%; }
+}
+
+/* ── Yellow bottom stripe (stretched to absolute edges of screen) ── */
+.yellowBar {
+  width: calc(100% + 160px);
+  margin-left: -80px;
+  margin-right: -80px;
+  height: 44px;
+  background-color: #ffd834;
+  margin-top: 6rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .vision {
+    padding: 6rem 40px 0 40px;
+  }
+  
+  .sideText {
+    font-size: 1.8rem;
+  }
+
+  .yellowBar {
+    width: calc(100% + 80px);
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sideTextWrapper {
+    display: none;
+  }
+  
+  .gridSection {
+    gap: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vision {
+    padding: 4rem 20px 0 20px;
+  }
+
+  .content {
+    padding-top: 5rem;
+    gap: 3.5rem;
+  }
+
+  .asteriskWrapper {
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .yellowBar {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .asteriskWrapper {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Icon Animations (Sleek & Professional) ── */
+.iconWrapper svg {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy spring transition */
+}
+
+.card:hover .iconWrapper svg {
+  transform: scale(1.15) translateY(-2px);
+}

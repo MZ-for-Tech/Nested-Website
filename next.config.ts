@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ['restorable-nonconcentrically-katalina.ngrok-free.dev'],
   compress: true,
 
   images: {

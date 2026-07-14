@@ -11,7 +11,7 @@ export default function StructuredData() {
     url: "https://nestedunited.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://nestedunited.com/ASSETS/logos/1.png",
+      url: "https://nestedunited.com/ASSETS/logos/nestedunited.svg",
       width: 360,
       height: 150,
     },
@@ -110,7 +110,7 @@ export default function StructuredData() {
     "@type": "ProfessionalService",
     "@id": "https://nestedunited.com/#localbusiness",
     name: "Nested United",
-    image: "https://nestedunited.com/ASSETS/logos/1.png",
+    image: "https://nestedunited.com/ASSETS/logos/nestedunited.svg",
     telephone: "+966-54-979-9468",
     email: "NestedUnited@Gmail.com",
     url: "https://nestedunited.com",

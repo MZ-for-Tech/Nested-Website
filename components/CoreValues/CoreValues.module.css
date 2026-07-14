@@ -1,0 +1,113 @@
+.coreValuesSection {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+}
+
+.card {
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card:nth-child(1) {
+  background-color: #ff4545; /* Bauhaus Red */
+}
+
+.card:nth-child(2) {
+  background-color: #ffcf3a; /* Bauhaus Yellow */
+}
+
+.card:nth-child(3) {
+  background-color: #4f72ff; /* Bauhaus Blue */
+}
+
+.iconContainer {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.iconSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* ── Eye blink ── */
+@keyframes eyeBlink {
+  0%, 88%, 100% { transform: scaleY(1); }
+  93%            { transform: scaleY(0.08); }
+}
+.eyeGroup {
+  animation: eyeBlink 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ── Philosophy arrows spin ── */
+@keyframes arrowsSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.arrowsGroup {
+  animation: arrowsSpin 5s linear infinite;
+  transform-origin: center;
+}
+
+/* ── Gear spin ── */
+@keyframes gearSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.gearGroup {
+  animation: gearSpin 6s linear infinite;
+  transform-origin: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #100f0d;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+  line-height: 1.1;
+  padding-top: 1.5rem;
+  width: 100%;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: #100f0d;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .card { padding: 4rem 2rem; }
+  .title { font-size: 2rem; }
+  .iconContainer { width: 100px; height: 100px; }
+}
+
+@media (max-width: 900px) {
+  .container { grid-template-columns: 1fr; }
+}
