@@ -3,6 +3,7 @@ import Hero from "@/components/Hero/Hero";
 import About from "@/components/About/About";
 import SmartOperations from "@/components/SmartOperations/SmartOperations";
 import StructuredData from "./structured-data";
+import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
 // Lazy-load below-the-fold sections for faster initial paint
 const Brands = dynamic(() => import("@/components/Brands/Brands"));
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <StructuredData />
+      <LanguageSwitcher />
       <main id="main-content" aria-label="Nested United main content">
         <Hero />
         <SmartOperations />

@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./Partners.module.css";
 import DoodleIcon from "./DoodleIcon";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const partnerNames = [
   "Partner Brand 1",
@@ -14,29 +17,25 @@ const partnerNames = [
 ];
 
 export default function Partners() {
+  const { tr } = useLanguage();
+
   const logos = [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png",
-    "6.png",
-    "7.png",
-    "8.png",
+    "1.png", "2.png", "3.png", "4.png",
+    "5.png", "6.png", "7.png", "8.png",
   ];
 
   return (
-    <section className={styles.partners} aria-label="Brands and partners we work with">
+    <section className={styles.partners} aria-label={tr.partners.heading}>
       <div className={styles.headingWrapper}>
         <div className={styles.line}></div>
         <div className={styles.titleContainer}>
-          <h2 className={styles.heading}>Brands we work with</h2>
+          <h2 className={styles.heading}>{tr.partners.heading}</h2>
           <div className={styles.headingIcon} aria-hidden="true">
             <DoodleIcon />
           </div>
         </div>
       </div>
-      <div className={styles.grid} role="list" aria-label="Partner brand logos">
+      <div className={styles.grid} role="list" aria-label={tr.partners.heading}>
         {logos.map((filename, index) => (
           <div key={index} className={styles.logoWrapper} role="listitem">
             <Image
@@ -52,3 +51,4 @@ export default function Partners() {
     </section>
   );
 }
+

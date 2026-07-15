@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import IconCollage from "../IconCollage/IconCollage";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const InstagramIcon = () => (
   <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,42 +40,39 @@ const TikTokIcon = () => (
 );
 
 export default function Footer() {
+  const { tr } = useLanguage();
+  const f = tr.footer;
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         {/* Left Column - Contact Details */}
         <div className={styles.leftColumn}>
-          <h2 className={styles.heading}>Ready to Start Your Project?</h2>
+          <h2 className={styles.heading}>{f.heading}</h2>
 
           <div className={styles.contactBlock}>
-            <h3 className={styles.contactTitle}>PHONE</h3>
+            <h3 className={styles.contactTitle}>{f.phone}</h3>
             <p className={styles.contactText}>+966 54 979 9468</p>
           </div>
 
           <div className={styles.contactBlock}>
-            <h3 className={styles.contactTitle}>EMAIL</h3>
+            <h3 className={styles.contactTitle}>{f.email}</h3>
             <p className={styles.contactText}>NestedUnited@Gmail.com</p>
           </div>
 
           <div className={styles.contactBlock}>
-            <h3 className={styles.contactTitle}>SOCIAL</h3>
+            <h3 className={styles.contactTitle}>{f.social}</h3>
             <div className={styles.socialList}>
               <a href="https://www.instagram.com/nestedunited" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                <div className={styles.socialIcon}>
-                  <InstagramIcon />
-                </div>
+                <div className={styles.socialIcon}><InstagramIcon /></div>
                 <span className={styles.socialText}>Instagram</span>
               </a>
               <a href="https://www.linkedin.com/company/nested-united/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                <div className={styles.socialIcon}>
-                  <LinkedInIcon />
-                </div>
+                <div className={styles.socialIcon}><LinkedInIcon /></div>
                 <span className={styles.socialText}>LinkedIn</span>
               </a>
               <a href="https://www.tiktok.com/@nested.united" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                <div className={styles.socialIcon}>
-                  <TikTokIcon />
-                </div>
+                <div className={styles.socialIcon}><TikTokIcon /></div>
                 <span className={styles.socialText}>TikTok</span>
               </a>
             </div>
@@ -81,10 +81,7 @@ export default function Footer() {
 
         {/* Right Column - Collage */}
         <div className={styles.rightColumn}>
-          {/* Abstract background shapes behind the hand */}
           <IconCollage className={styles.footerCollage} />
-
-          {/* Hand holding phone */}
           <div className={styles.handImageWrapper}>
             <Image
               src="/ASSETS/pics/hand.png"
@@ -95,7 +92,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
     </footer>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Red_Hat_Display, Geist_Mono } from "next/font/google";
+import { Red_Hat_Display, Geist_Mono, IBM_Plex_Sans_Arabic } from "next/font/google";
 import PageLoader from "@/components/PageLoader/PageLoader";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 
 const redHatDisplay = Red_Hat_Display({
@@ -13,6 +14,13 @@ const redHatDisplay = Red_Hat_Display({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const ibmPlexArabic = IBM_Plex_Sans_Arabic({
+  variable: "--font-arabic",
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -94,7 +102,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${redHatDisplay.variable} ${geistMono.variable} h-full antialiased`}
+      dir="ltr"
+      className={`${redHatDisplay.variable} ${geistMono.variable} ${ibmPlexArabic.variable} h-full antialiased`}
     >
       <head>
         <meta name="theme-color" content="#fffbf3" />
@@ -102,9 +111,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body className="min-h-full flex flex-col m-0 p-0">
-        <a href="#main-content" className="skip-link">Skip to main content</a>
-        <PageLoader />
-        {children}
+        <LanguageProvider>
+          <a href="#main-content" className="skip-link">Skip to main content</a>
+          <PageLoader />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

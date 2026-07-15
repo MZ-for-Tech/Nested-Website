@@ -20,6 +20,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Arabic (RTL) font ── */
+[dir="rtl"] body {
+  font-family: var(--font-arabic), "IBM Plex Sans Arabic", sans-serif;
+}
+
+/* Ticker animation reverses in RTL */
+[dir="rtl"] .tickerContent {
+  animation-direction: reverse;
+}
+
+
 html {
   scroll-behavior: smooth;
 }

@@ -1,38 +1,42 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./About.module.css";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function About() {
+  const { tr } = useLanguage();
+  const ticker = tr.about.tickerText;
+
   return (
     <section className={styles.about}>
       {/* Marquee Ticker Top Bar */}
       <div className={styles.tickerBar}>
         <div className={styles.tickerContent}>
-          <span>NESTED UNITED • WHERE IDEAS TAKE SHAPE •</span>
-          <span>NESTED UNITED • WHERE IDEAS TAKE SHAPE •</span>
-          <span>NESTED UNITED • WHERE IDEAS TAKE SHAPE •</span>
-          <span>NESTED UNITED • WHERE IDEAS TAKE SHAPE •</span>
+          <span>{ticker}</span>
+          <span>{ticker}</span>
+          <span>{ticker}</span>
+          <span>{ticker}</span>
         </div>
       </div>
 
       <div className={styles.container}>
-        {/* Text Column (Now on the left) */}
+        {/* Text Column */}
         <div className={styles.textColumn}>
           <div className={styles.textContent}>
-            <div className={styles.tag}>WHO WE ARE</div>
+            <div className={styles.tag}>{tr.about.tag}</div>
             <h2 className={styles.heading}>
-              ABOUT<br />
-              <span className={styles.headingAccent}>NESTED<br />UNITED</span>
+              {tr.about.headingLine1}
+              <br />
+              <span className={styles.headingAccent} style={{ whiteSpace: "pre-line" }}>
+                {tr.about.headingAccent}
+              </span>
             </h2>
-            <p className={styles.text}>
-              Nested United is a project operations and development company
-              helping businesses operate more efficiently through integrated
-              solutions in operations, hospitality, technology, marketing,
-              and customer experience.
-            </p>
+            <p className={styles.text}>{tr.about.text}</p>
           </div>
         </div>
 
-        {/* Image Column (Now on the right) */}
+        {/* Image Column */}
         <div className={styles.imageColumn}>
           <div className={styles.imageContainer}>
             <div className={styles.imageDecor}></div>
@@ -51,3 +55,4 @@ export default function About() {
     </section>
   );
 }
+

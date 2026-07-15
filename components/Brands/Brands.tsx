@@ -2,6 +2,7 @@
 
 import styles from "./Brands.module.css";
 import ClaudeIcon from "../IconCollage/ClaudeIcon";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const StarIcon = () => (
   <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,12 +19,15 @@ const ArrowIcon = ({ color = "#fff", className = "" }) => (
 );
 
 export default function Brands() {
+  const { tr } = useLanguage();
+  const b = tr.brands;
+
   const blocks = [
     {
       id: "store",
       bgColor: "#0a0a0a",
-      title: "Visit Our\nStore",
-      subtitle: "NESTED CLUB",
+      title: b.storeTitle,
+      subtitle: b.storeSubtitle,
       titleColor: "#fff",
       arrowColor: "#fff",
       type: "title",
@@ -34,7 +38,7 @@ export default function Brands() {
       bgColor: "#ff5054",
       logoName: "JOYNEST",
       logoSub: "Event.",
-      description: "Events, hospitality management, and celebrations.",
+      description: b.joynestDesc,
       titleColor: "#fff",
       arrowColor: "#fff",
       type: "logo",
@@ -42,7 +46,7 @@ export default function Brands() {
     {
       id: "stay",
       bgColor: "#0a0a0a",
-      title: "Book your stay\nanywhere",
+      title: b.stayTitle,
       titleColor: "#fff",
       arrowColor: "#fff",
       type: "title",
@@ -52,7 +56,7 @@ export default function Brands() {
       bgColor: "#4f72ff",
       logoName: "TECHNEST",
       logoSub: "Dept.",
-      description: "Systems, technologies, and digital solutions for modern businesses.",
+      description: b.technestDesc,
       titleColor: "#100f0d",
       arrowColor: "#100f0d",
       type: "logo",
@@ -62,7 +66,7 @@ export default function Brands() {
       bgColor: "#ffdb3d",
       logoName: "OPNEST",
       logoSub: "Dept.",
-      description: "Real estate operations and property management solutions for residential, commercial, and hospitality assets.",
+      description: b.opnestDesc,
       titleColor: "#100f0d",
       arrowColor: "#100f0d",
       type: "logo",
@@ -72,7 +76,7 @@ export default function Brands() {
       bgColor: "#22c55e",
       logoName: "PRINTNEST",
       logoSub: "Dept.",
-      description: "Creative branding, printing, and marketing services.",
+      description: b.printnestDesc,
       titleColor: "#100f0d",
       arrowColor: "#100f0d",
       type: "logo",
@@ -88,10 +92,8 @@ export default function Brands() {
           <div className={styles.header}>
             <StarIcon />
             <div>
-              <h2 className={styles.heading}>Our services</h2>
-              <p className={styles.subtitle}>
-                A connected ecosystem of specialized brands designed to deliver integrated business solutions.
-              </p>
+              <h2 className={styles.heading}>{b.heading}</h2>
+              <p className={styles.subtitle}>{b.subtitle}</p>
             </div>
           </div>
 
@@ -103,8 +105,8 @@ export default function Brands() {
                 <span className={styles.logoSub} style={{ color: "#100f0d" }}>Boutique.</span>
               </div>
               <div className={styles.signatureBottom}>
-                <h4 className={styles.signatureTitle} style={{ color: "#fff" }}>Our<br />Signature<br />Brand</h4>
-                <p className={styles.signatureDesc}>Our signature brand for boutique hospitality experiences</p>
+                <h4 className={styles.signatureTitle} style={{ color: "#fff", whiteSpace: "pre-line" }}>{b.signatureTitle}</h4>
+                <p className={styles.signatureDesc}>{b.signatureDesc}</p>
                 <ArrowIcon color="#fff" className={styles.arrowBottomLeft} />
               </div>
             </div>
@@ -166,3 +168,4 @@ export default function Brands() {
     </section>
   );
 }
+

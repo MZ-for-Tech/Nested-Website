@@ -3,10 +3,13 @@
 import Image from "next/image";
 import styles from "./Hero.module.css";
 import IconCollage from "../IconCollage/IconCollage";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { tr } = useLanguage();
+
   return (
-    <section className={styles.hero} aria-label="Hero: From Operations to Growth">
+    <section className={styles.hero} aria-label={tr.hero.sideText}>
       {/* Right Column - Background Image */}
       <div className={styles.rightColumn}>
         <Image
@@ -23,7 +26,7 @@ export default function Hero() {
       <div className={styles.leftColumn}>
         {/* Vertical Side Text */}
         <div className={styles.sideTextWrapper}>
-          <div className={styles.sideText}>WHERE IDEAS TAKE SHAPE</div>
+          <div className={styles.sideText}>{tr.hero.sideText}</div>
         </div>
 
         {/* Logo */}
@@ -41,9 +44,8 @@ export default function Hero() {
 
         {/* Text Content */}
         <div className={`${styles.content} ${styles.animHeading}`}>
-          <h1 className={styles.heading}>
-            Start your project<br />
-            with us
+          <h1 className={styles.heading} style={{ whiteSpace: "pre-line" }}>
+            {tr.hero.heading}
           </h1>
         </div>
         {/* Graphic Blocks Collage */}
@@ -52,3 +54,4 @@ export default function Hero() {
     </section>
   );
 }
+

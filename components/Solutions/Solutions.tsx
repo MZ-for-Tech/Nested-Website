@@ -3,6 +3,7 @@
 import { useState, ComponentType } from "react";
 import ClaudeIcon from "@/components/IconCollage/ClaudeIcon";
 import styles from "./Solutions.module.css";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /* ── Service card icons (clean SVG) ── */
 const GearIcon = () => (
@@ -49,44 +50,7 @@ const MonitorIcon = () => (
   </svg>
 );
 
-const services = [
-  {
-    id: "ops",
-    Icon: GearIcon,
-    title: "Project Operations",
-    description: "Structured operations that improve efficiency, performance, and long-term growth",
-  },
-  {
-    id: "cx",
-    Icon: UsersIcon,
-    title: "Customer Experience",
-    description: "Create customer journeys that improve satisfaction and build lasting loyalty",
-  },
-  {
-    id: "biz",
-    Icon: TrendingUpIcon,
-    title: "Business Development",
-    description: "Build scalable strategies that support sustainable business growth",
-  },
-  {
-    id: "hosp",
-    Icon: HotelIcon,
-    title: "Hospitality Management",
-    description: "End-to-end management for hospitality and short-term rental projects",
-  },
-  {
-    id: "mkt",
-    Icon: MegaphoneIcon,
-    title: "Marketing & Branding",
-    description: "Develop brands, marketing strategies, and engaging content that drive results",
-  },
-  {
-    id: "tech",
-    Icon: MonitorIcon,
-    title: "Technology Solutions",
-    description: "Smart digital solutions, websites, and operational systems built for modern businesses",
-  },
-];
+const serviceIcons: ComponentType[] = [GearIcon, UsersIcon, TrendingUpIcon, HotelIcon, MegaphoneIcon, MonitorIcon];
 
 const hoverClasses = [
   styles.hoverYellow,
@@ -101,7 +65,6 @@ function ServiceCard({ Icon, title, description }: { Icon: ComponentType, title:
 
   const handleMouseEnter = () => {
     let randomClass = hoverClasses[Math.floor(Math.random() * hoverClasses.length)];
-    // Ensure we get a different color each time we hover
     while (randomClass === activeHoverClass) {
       randomClass = hoverClasses[Math.floor(Math.random() * hoverClasses.length)];
     }
@@ -109,8 +72,8 @@ function ServiceCard({ Icon, title, description }: { Icon: ComponentType, title:
   };
 
   return (
-    <div 
-      className={`${styles.card} ${activeHoverClass}`} 
+    <div
+      className={`${styles.card} ${activeHoverClass}`}
       onMouseEnter={handleMouseEnter}
     >
       <div className={styles.iconWrapper}>
@@ -123,11 +86,14 @@ function ServiceCard({ Icon, title, description }: { Icon: ComponentType, title:
 }
 
 export default function Solutions() {
+  const { tr } = useLanguage();
+  const s = tr.solutions;
+
   return (
     <section className={styles.solutions}>
       {/* ── Centred main content ── */}
       <div className={styles.content}>
-        
+
         {/* ── Spinning asterisk — aligned top-left of content container ── */}
         <div className={styles.asteriskWrapper}>
           <ClaudeIcon noBackground />
@@ -135,35 +101,31 @@ export default function Solutions() {
 
         {/* Header — fully centred */}
         <div className={styles.header}>
-          <p className={styles.tag}>WHAT WE DO</p>
+          <p className={styles.tag}>{s.tag}</p>
           <h2 className={styles.heading}>
-            End-to-End Solutions for{" "}
-            <span className={styles.highlight}>Modern Businesses</span>
+            {s.heading}{" "}
+            <span className={styles.highlight}>{s.headingHighlight}</span>
           </h2>
-          <p className={styles.description}>
-            We provide integrated operational solutions that help businesses
-            operate efficiently, grow sustainably, and deliver exceptional
-            experiences.
-          </p>
+          <p className={styles.description}>{s.description}</p>
         </div>
 
         {/* Grid and Side text container */}
         <div className={styles.gridSection}>
           {/* 3 × 2 service cards */}
           <div className={styles.grid}>
-            {services.map(({ id, Icon, title, description }) => (
-              <ServiceCard 
-                key={id} 
-                Icon={Icon} 
-                title={title} 
-                description={description} 
+            {s.services.map(({ id, title, description }, i) => (
+              <ServiceCard
+                key={id}
+                Icon={serviceIcons[i]}
+                title={title}
+                description={description}
               />
             ))}
           </div>
 
           {/* ── Vertical side label — right edge ── */}
           <div className={styles.sideTextWrapper} aria-hidden="true">
-            <span className={styles.sideText}>WHERE IDEAS TAKE SHAPE</span>
+            <span className={styles.sideText}>{s.sideText}</span>
           </div>
         </div>
       </div>
@@ -173,3 +135,4 @@ export default function Solutions() {
     </section>
   );
 }
+

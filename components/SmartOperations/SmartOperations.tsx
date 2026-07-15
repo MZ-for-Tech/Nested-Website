@@ -1,8 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./SmartOperations.module.css";
 import DotsIcon from "../IconCollage/DotsIcon";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function SmartOperations() {
+  const { tr } = useLanguage();
+  const s = tr.smartOps;
+
   return (
     <section className={styles.smartOperations} aria-label="Nested United — Smart Operations">
       <div className={styles.container}>
@@ -24,24 +30,19 @@ export default function SmartOperations() {
           </div>
           <div className={styles.textContent}>
             <h2 className={styles.heading}>
-              Smart<br />
-              Operations.<br />
-              Sustainable<br />
-              Growth.
+              {s.headingLine1}<br />
+              {s.headingLine2}<br />
+              {s.headingLine3}<br />
+              {s.headingLine4}
             </h2>
-            <p className={styles.text}>
-              We help businesses build efficient operations,
-              improve customer experience,
-              and achieve sustainable growth through
-              professional management and smart systems.
-            </p>
+            <p className={styles.text}>{s.text}</p>
             <div className={styles.buttonRow}>
-              <button type="button" className={styles.button} aria-label="Start your project with Nested United">
-                START YOUR PROJECT
+              <button type="button" className={styles.button} aria-label={s.ariaBtn1}>
+                {s.btn1}
                 <span className={styles.buttonIcon} aria-hidden="true">→</span>
               </button>
-              <button type="button" className={styles.buttonSecondary} aria-label="Book a consultation with Nested United">
-                BOOK A CONSULTATION
+              <button type="button" className={styles.buttonSecondary} aria-label={s.ariaBtn2}>
+                {s.btn2}
                 <span className={styles.buttonIcon} aria-hidden="true">→</span>
               </button>
             </div>
@@ -51,3 +52,4 @@ export default function SmartOperations() {
     </section>
   );
 }
+
