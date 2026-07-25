@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
 import styles from "./Footer.module.css";
 import IconCollage from "../IconCollage/IconCollage";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -40,8 +40,17 @@ const TikTokIcon = () => (
 );
 
 export default function Footer() {
-  const { tr } = useLanguage();
+  const { tr, lang } = useLanguage();
   const f = tr.footer;
+  const [copiedState, setCopiedState] = useState<string | null>(null);
+
+  const handleCopy = (text: string, type: string) => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+      setCopiedState(type);
+      setTimeout(() => setCopiedState(null), 2000);
+    }
+  };
 
   return (
     <footer className={styles.footer}>
@@ -51,13 +60,50 @@ export default function Footer() {
           <h2 className={styles.heading}>{f.heading}</h2>
 
           <div className={styles.contactBlock}>
-            <h3 className={styles.contactTitle}>{f.phone}</h3>
-            <p className={styles.contactText}>+966 54 979 9468</p>
+            <p className={styles.contactText}><strong>{f.companyName}</strong></p>
+            <p className={styles.contactText}>{f.vatNo}</p>
+            <p className={styles.contactText}>{f.location}</p>
+            <div
+              className={styles.clickableContact}
+              onClick={() => handleCopy("+966549799468", "phone")}
+            >
+              <p className={styles.contactTextInteractive}>{f.customerService}</p>
+              {copiedState === "phone" && (
+                <span className={styles.copiedToast}>
+                  {lang === "ar" ? "تم النسخ!" : "Copied!"}
+                </span>
+              )}
+            </div>
           </div>
 
           <div className={styles.contactBlock}>
             <h3 className={styles.contactTitle}>{f.email}</h3>
-            <p className={styles.contactText}>NestedUnited@Gmail.com</p>
+            <div
+              className={styles.clickableContact}
+              onClick={() => handleCopy("NestedUnited@Gmail.com", "email")}
+            >
+              <p className={styles.contactTextInteractive}>NestedUnited@Gmail.com</p>
+              {copiedState === "email" && (
+                <span className={styles.copiedToast}>
+                  {lang === "ar" ? "تم النسخ!" : "Copied!"}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.contactBlock}>
+            <h3 className={styles.contactTitle}>{f.careersEmailLabel}</h3>
+            <div
+              className={styles.clickableContact}
+              onClick={() => handleCopy("Careers.nested@gmail.com", "careers")}
+            >
+              <p className={styles.contactTextInteractive}>Careers.nested@gmail.com</p>
+              {copiedState === "careers" && (
+                <span className={styles.copiedToast}>
+                  {lang === "ar" ? "تم النسخ!" : "Copied!"}
+                </span>
+              )}
+            </div>
           </div>
 
           <div className={styles.contactBlock}>
@@ -82,14 +128,24 @@ export default function Footer() {
         {/* Right Column - Collage */}
         <div className={styles.rightColumn}>
           <IconCollage className={styles.footerCollage} />
-          <div className={styles.handImageWrapper}>
-            <Image
-              src="/ASSETS/pics/hand.png"
-              alt="Customer Service"
-              fill
-              className={styles.handImage}
-            />
-          </div>
+        </div>
+      </div>
+
+      {/* Sub-Footer Bar at the very bottom */}
+      <div className={styles.subFooter}>
+        <div className={styles.subFooterContent}>
+          <p className={styles.copyrightText}>{f.copyright}</p>
+          <p className={styles.developerText}>
+            {f.developedBy}{" "}
+            <a
+              href="https://mzfortech.qzz.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.developerLink}
+            >
+              MZ for Tech solutions
+            </a>
+          </p>
         </div>
       </div>
     </footer>

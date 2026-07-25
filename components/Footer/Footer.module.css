@@ -6,6 +6,7 @@
   position: relative;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -138,6 +139,16 @@
   position: relative;
 }
 
+/* Mobile decorative grid — hidden on desktop */
+.mobileDecor {
+  display: none;
+}
+
+.mobileBlock {
+  height: 70px;
+  border-radius: 4px;
+}
+
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
@@ -168,24 +179,192 @@
 }
 
 @media (max-width: 768px) {
+  .footer {
+    min-height: auto;
+  }
+
   .leftColumn {
-    padding: 3rem 20px;
+    padding: 3rem 24px 1rem 24px;
+    width: 100%;
+    flex: none;
+    box-sizing: border-box;
   }
 
   .heading {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .contactBlock {
+    margin-bottom: 2rem;
   }
 
   .rightColumn {
-    min-height: 500px;
-  }
-
-  .handImageWrapper {
-    width: 280px;
-    height: 280px;
+    display: none;
   }
 
   .footerCollage {
-    transform: translateX(50%) scale(0.6);
+    display: none !important;
   }
+
+  .mobileDecor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
+    padding: 1.5rem 24px 2rem 24px;
+    box-sizing: border-box;
+  }
+
+  .subFooter {
+    padding: 1.5rem 24px 2.5rem 24px;
+  }
+
+  .subFooterContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .copyrightText {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  .developerText {
+    text-align: center;
+    font-size: 0.85rem;
+    justify-content: center;
+  }
+}
+
+/* ── RTL (Arabic) Adjustments ── */
+:global([dir="rtl"]) .leftColumn {
+  padding: 4rem 80px 4rem 40px;
+}
+
+@media (max-width: 768px) {
+  :global([dir="rtl"]) .leftColumn {
+    padding: 3rem 24px 1rem 24px;
+  }
+
+  :global([dir="rtl"]) .handImageWrapper {
+    left: auto;
+    right: auto;
+    width: 200px;
+    height: 240px;
+    bottom: 0;
+  }
+}
+
+:global([dir="rtl"]) .handImageWrapper {
+  right: auto;
+  left: -100px;
+  width: 1000px;
+  height: 1000px;
+  bottom: -5px;
+}
+
+:global([dir="rtl"]) .handImage {
+  transform: none;
+}
+
+:global([dir="rtl"]) .footerCollage {
+  left: auto;
+  right: 36%;
+  bottom: 83px;
+  transform: scaleX(-1);
+  transform-origin: bottom center;
+}
+
+.clickableContact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  padding: 0.35rem 0.65rem;
+  margin-left: -0.65rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.clickableContact:hover {
+  background-color: rgba(238, 29, 82, 0.08);
+}
+
+.clickableContact:active {
+  transform: scale(0.98);
+}
+
+.contactTextInteractive {
+  font-size: 1.25rem;
+  color: #100f0d;
+  margin: 0;
+  font-weight: 600;
+}
+
+.copiedToast {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ee1d52;
+  background: rgba(238, 29, 82, 0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  animation: fadeIn 0.2s ease;
+  white-space: nowrap;
+}
+
+/* ── Sub-Footer Bar ── */
+.subFooter {
+  width: 100%;
+  background-color: #100f0d;
+  color: #fffbf3;
+  padding: 1.25rem 2rem;
+  box-sizing: border-box;
+  z-index: 20;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subFooterContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.copyrightText {
+  margin: 0;
+  color: #d1d1d1;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.developerText {
+  margin: 0;
+  color: #d1d1d1;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.developerLink {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.developerLink:hover {
+  color: #ffd834;
+  text-decoration-color: #ffd834;
 }

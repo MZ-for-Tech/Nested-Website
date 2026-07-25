@@ -42,6 +42,7 @@ export default function Brands() {
       titleColor: "#fff",
       arrowColor: "#fff",
       type: "logo",
+      linkUrl: "https://linktr.ee/joy_nest",
     },
     {
       id: "stay",
@@ -50,6 +51,7 @@ export default function Brands() {
       titleColor: "#fff",
       arrowColor: "#fff",
       type: "title",
+      linkUrl: "https://linktr.ee/OPNest",
     },
     {
       id: "technest",
@@ -60,6 +62,7 @@ export default function Brands() {
       titleColor: "#100f0d",
       arrowColor: "#100f0d",
       type: "logo",
+      linkUrl: "/ASSETS/files/technest.pdf",
     },
     {
       id: "opnest",
@@ -70,6 +73,7 @@ export default function Brands() {
       titleColor: "#100f0d",
       arrowColor: "#100f0d",
       type: "logo",
+      linkUrl: "/ASSETS/files/opnest.pdf",
     },
     {
       id: "printnest",
@@ -80,6 +84,7 @@ export default function Brands() {
       titleColor: "#100f0d",
       arrowColor: "#100f0d",
       type: "logo",
+      linkUrl: "/ASSETS/files/printnest.pdf",
     }
   ];
 
@@ -98,7 +103,13 @@ export default function Brands() {
           </div>
 
           {/* THENEST signature card */}
-          <div className={`${styles.card} ${styles.cardSignature}`} style={{ backgroundColor: "#9ea1a0", "--card-bg": "#9ea1a0" } as React.CSSProperties}>
+          <a
+            href="https://linktr.ee/THE.NEST"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.card} ${styles.cardSignature}`}
+            style={{ backgroundColor: "#9ea1a0", "--card-bg": "#9ea1a0" } as React.CSSProperties}
+          >
             <div className={styles.signatureContent}>
               <div className={styles.logoBlock}>
                 <h3 className={styles.logoText} style={{ color: "#100f0d" }}>THENEST</h3>
@@ -110,58 +121,67 @@ export default function Brands() {
                 <ArrowIcon color="#fff" className={styles.arrowBottomLeft} />
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* ── Right Grid ── */}
         <div className={styles.rightGrid}>
-          {blocks.map((block) => (
-            <div
-              key={block.id}
-              className={`${styles.card} ${block.type === "logo" ? styles.cardLogo : styles.cardTitle}`}
-              style={{ backgroundColor: block.bgColor, "--card-bg": block.bgColor } as React.CSSProperties}
-            >
-              {/* Arrow: in normal flow at top-right */}
-              <div className={styles.cardArrowRow}>
-                <ArrowIcon color={block.arrowColor} />
-              </div>
+          {blocks.map((block) => {
+            const isLink = Boolean(block.linkUrl);
+            const CardTag = isLink ? "a" : "div";
+            const extraProps = isLink
+              ? { href: block.linkUrl, target: "_blank", rel: "noopener noreferrer" }
+              : {};
 
-              {/* Logo cards: logo top, description bottom */}
-              {block.type === "logo" && (
-                <div className={styles.logoCardContent}>
-                  <div className={styles.logoBlock}>
-                    <h3 className={styles.logoText} style={{ color: block.titleColor }}>{block.logoName}</h3>
-                    <span className={styles.logoSub} style={{ color: block.titleColor }}>{block.logoSub}</span>
-                  </div>
-                  <p className={styles.cardDesc} style={{ color: block.titleColor }}>{block.description}</p>
+            return (
+              <CardTag
+                key={block.id}
+                {...extraProps}
+                className={`${styles.card} ${block.type === "logo" ? styles.cardLogo : styles.cardTitle}`}
+                style={{ backgroundColor: block.bgColor, "--card-bg": block.bgColor } as React.CSSProperties}
+              >
+                {/* Arrow: in normal flow at top-right */}
+                <div className={styles.cardArrowRow}>
+                  <ArrowIcon color={block.arrowColor} />
                 </div>
-              )}
 
-              {/* Title cards: title + optional subtitle, centered */}
-              {block.type === "title" && (
-                <div className={styles.titleCardContent}>
-                  <h4
-                    className={styles.cardTitle}
-                    style={{ color: block.titleColor, whiteSpace: "pre-wrap" }}
-                  >
-                    {block.title}
-                  </h4>
-                  {block.subtitle && (
-                    <div className={styles.subtitleWrapper}>
-                      <p className={styles.cardSubtitle} style={{ color: block.titleColor, margin: 0 }}>
-                        {block.subtitle}
-                      </p>
-                      {block.hasAsterisk && (
-                        <div className={styles.asteriskWrapper}>
-                          <ClaudeIcon noBackground />
-                        </div>
-                      )}
+                {/* Logo cards: logo top, description bottom */}
+                {block.type === "logo" && (
+                  <div className={styles.logoCardContent}>
+                    <div className={styles.logoBlock}>
+                      <h3 className={styles.logoText} style={{ color: block.titleColor }}>{block.logoName}</h3>
+                      <span className={styles.logoSub} style={{ color: block.titleColor }}>{block.logoSub}</span>
                     </div>
-                  )}
-                </div>
-              )}
-            </div>
-          ))}
+                    <p className={styles.cardDesc} style={{ color: block.titleColor }}>{block.description}</p>
+                  </div>
+                )}
+
+                {/* Title cards: title + optional subtitle, centered */}
+                {block.type === "title" && (
+                  <div className={styles.titleCardContent}>
+                    <h4
+                      className={styles.cardTitle}
+                      style={{ color: block.titleColor, whiteSpace: "pre-wrap" }}
+                    >
+                      {block.title}
+                    </h4>
+                    {block.subtitle && (
+                      <div className={styles.subtitleWrapper}>
+                        <p className={styles.cardSubtitle} style={{ color: block.titleColor, margin: 0 }}>
+                          {block.subtitle}
+                        </p>
+                        {block.hasAsterisk && (
+                          <div className={styles.asteriskWrapper}>
+                            <ClaudeIcon noBackground />
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </CardTag>
+            );
+          })}
         </div>
 
       </div>

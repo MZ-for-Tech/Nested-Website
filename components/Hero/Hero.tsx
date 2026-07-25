@@ -1,16 +1,26 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import styles from "./Hero.module.css";
 import IconCollage from "../IconCollage/IconCollage";
+import MobileHeroCollage from "./MobileHeroCollage";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
   const { tr } = useLanguage();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   return (
     <section className={styles.hero} aria-label={tr.hero.sideText}>
-      {/* Right Column - Background Image */}
+      {/* Right Column - Background Image (desktop only) */}
       <div className={styles.rightColumn}>
         <Image
           src="/ASSETS/pics/building.png"
@@ -22,7 +32,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Left Column - Beige Area */}
+      {/* Left Column */}
       <div className={styles.leftColumn}>
         {/* Vertical Side Text */}
         <div className={styles.sideTextWrapper}>
@@ -48,10 +58,19 @@ export default function Hero() {
             {tr.hero.heading}
           </h1>
         </div>
-        {/* Graphic Blocks Collage */}
-        <IconCollage className={styles.collage} />
+
+        {/* Collage — conditionally render desktop or mobile version */}
+        {isMobile ? (
+          <div className={styles.mobileCollageWrapper}>
+            <MobileHeroCollage />
+          </div>
+        ) : (
+          <IconCollage className={styles.collage} />
+        )}
+
+        {/* Mobile accent bar */}
+        {isMobile && <div className={styles.mobileAccent} aria-hidden="true" />}
       </div>
     </section>
   );
 }
-

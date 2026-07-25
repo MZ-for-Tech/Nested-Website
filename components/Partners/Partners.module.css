@@ -15,6 +15,7 @@
   gap: 2rem;
   padding: 6rem 80px 4rem 80px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .line {
@@ -25,11 +26,14 @@
 
 .titleContainer {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .heading {
-  font-size: 4rem;
+  font-size: 3.8rem;
   font-weight: 800;
   color: #100f0d;
   margin: 0;
@@ -38,11 +42,10 @@
 }
 
 .headingIcon {
-  position: absolute;
-  top: -30px;
-  right: -60px;
-  width: 70px;
-  height: 70px;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
 }
 
 .grid {
@@ -76,6 +79,9 @@
 }
 
 @media (max-width: 1024px) {
+  .heading {
+    font-size: 3rem;
+  }
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -83,7 +89,7 @@
 
 @media (max-width: 768px) {
   .headingWrapper {
-    padding: 4rem 20px;
+    padding: 3.5rem 24px 2rem 24px;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
@@ -92,18 +98,18 @@
     width: 40px;
   }
   .heading {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.15;
   }
   .headingIcon {
-    top: -20px;
-    right: -30px;
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
   }
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .logoWrapper {
-    min-height: 180px;
+    padding: 1.5rem;
+    min-height: 140px;
   }
 }

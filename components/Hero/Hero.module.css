@@ -41,7 +41,9 @@
 
 .logo {
   position: absolute;
-  top: -80px;
+  top: -20px;
+  left: 100px;
+  z-index: 20;
 }
 
 .content {
@@ -70,6 +72,16 @@
   height: 560px;
   z-index: 3;
   animation: collageIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+/* Desktop: wrapper hidden — desktop uses the absolute-positioned IconCollage */
+.mobileCollageWrapper {
+  display: none;
+}
+
+/* Hidden on desktop, shown only on mobile */
+.mobileAccent {
+  display: none;
 }
 
 /* ── Staggered Entrance Animations ── */
@@ -160,42 +172,119 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
   .leftColumn {
     clip-path: none;
+    position: relative;
     width: 100%;
-    height: 60%;
+    min-height: 100svh;
+    padding: 90px 24px 40px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+    overflow: hidden;
   }
 
   .rightColumn {
-    position: relative;
-    width: 100%;
-    height: 40%;
+    display: none;
   }
 
-  .hero {
-    flex-direction: column;
-  }
-
-  .heading {
-    font-size: 3rem;
+  .rightImage {
+    transform: none;
+    object-position: center center;
   }
 
   .logo {
-    left: 20px;
-    top: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
+    flex-shrink: 0;
   }
 
   .content {
-    margin-left: 20px;
-    margin-top: 20vh;
+    margin-top: 0;
+    margin-left: 0;
+    max-width: 100%;
   }
 
+  .heading {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  /* Show the clean mobile collage grid */
+  .mobileCollageWrapper {
+    display: block;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  /* Hide the desktop absolute-positioned collage */
   .collage {
-    display: none;
-    /* Hide collage on small screens for simplicity */
+    display: none !important;
   }
 
   .sideTextWrapper {
     display: none;
+  }
+
+  /* Bold accent bar at the bottom */
+  .mobileAccent {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #ffd834 0%, #ffd834 50%, #ee1d52 50%, #ee1d52 100%);
+    border-radius: 3px;
+    margin-top: auto;
+  }
+}
+
+/* ── RTL (Arabic) Support ── */
+:global([dir="rtl"]) .logo {
+  left: 100px;
+  right: auto;
+}
+
+:global([dir="rtl"]) .content {
+  margin-left: 100px;
+  margin-right: auto;
+  max-width: 600px;
+  text-align: right;
+}
+
+:global([dir="rtl"]) .heading {
+  font-size: 4.8rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+:global([dir="rtl"]) .sideTextWrapper {
+  left: 20px;
+  right: auto;
+}
+
+@media (max-width: 768px) {
+  :global([dir="rtl"]) .logo {
+    left: 0;
+  }
+
+  :global([dir="rtl"]) .content {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    text-align: right;
+  }
+
+  :global([dir="rtl"]) .heading {
+    font-size: 2.5rem;
+    line-height: 1.25;
   }
 }
