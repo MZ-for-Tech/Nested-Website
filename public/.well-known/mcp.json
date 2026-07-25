@@ -1,0 +1,37 @@
+{
+  "mcpVersion": "1.0",
+  "name": "Nested United",
+  "description": "MCP server card for Nested United — a Saudi integrated business ecosystem in Jeddah. Provides information about services: technology, real estate, design, marketing, and events.",
+  "serverUrl": "https://nestedunited.com/api/mcp",
+  "documentationUrl": "https://nestedunited.com/.well-known/openapi.json",
+  "organization": {
+    "name": "Nested United",
+    "url": "https://nestedunited.com",
+    "contact": "NestedUnited@Gmail.com"
+  },
+  "capabilities": {
+    "resources": true,
+    "tools": false,
+    "prompts": false,
+    "sampling": false
+  },
+  "resources": [
+    {
+      "uri": "nested://services",
+      "name": "Services Overview",
+      "description": "Overview of all Nested United services in Arabic and English",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "nested://contact",
+      "name": "Contact Information",
+      "description": "Contact details for Nested United Jeddah",
+      "mimeType": "application/json"
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "region": "SA",
+  "languages": ["ar-SA", "en-US"]
+}

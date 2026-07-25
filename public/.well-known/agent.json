@@ -1,0 +1,63 @@
+{
+  "agentVersion": "1.0",
+  "name": "Nested United Agent",
+  "description": "Agent skills descriptor for Nested United — covers business services inquiry, real estate rental, event booking, and technology services in Saudi Arabia.",
+  "provider": {
+    "organization": "Nested United",
+    "url": "https://nestedunited.com",
+    "email": "NestedUnited@Gmail.com",
+    "phone": "+966549799468",
+    "location": {
+      "city": "Jeddah",
+      "country": "SA",
+      "region": "Makkah"
+    }
+  },
+  "skills": [
+    {
+      "id": "service-inquiry",
+      "name": "Service Inquiry",
+      "nameAr": "استفسار عن الخدمات",
+      "description": "Answer questions about Nested United's services: technology, real estate, marketing, design, events.",
+      "descriptionAr": "الإجابة عن أسئلة خدمات نيستد يونايتد: التقنية، العقارات، التسويق، التصميم، الفعاليات.",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "rental-info",
+      "name": "Real Estate & Rental Information",
+      "nameAr": "معلومات العقارات والتأجير",
+      "description": "Provide information about daily and monthly rental, Airbnb and Gathern property management in Jeddah.",
+      "descriptionAr": "تقديم معلومات التأجير اليومي والشهري وإدارة وحدات Airbnb وجاذر إن في جدة.",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "event-info",
+      "name": "Event Planning Information",
+      "nameAr": "معلومات تنظيم الفعاليات",
+      "description": "Provide information about event planning, conferences, exhibitions, and hospitality services in Jeddah.",
+      "descriptionAr": "تقديم معلومات تنظيم الحفلات والمؤتمرات والمعارض في جدة والسعودية.",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "contact",
+      "name": "Contact & Location",
+      "nameAr": "التواصل والموقع",
+      "description": "Provide contact details, location, and social media links for Nested United.",
+      "descriptionAr": "بيانات التواصل والموقع ووسائل التواصل الاجتماعي لنيستد يونايتد.",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "webhooks": null,
+  "rateLimit": {
+    "requestsPerMinute": 60
+  },
+  "supportedLanguages": ["ar", "en"],
+  "targetMarket": ["SA", "AE", "KW", "BH", "QA", "OM"]
+}

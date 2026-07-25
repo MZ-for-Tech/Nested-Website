@@ -1,0 +1,89 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Nested United API",
+    "description": "API catalog for Nested United — Saudi integrated business ecosystem in Jeddah. Provides service information, contact details, and business data.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Nested United",
+      "email": "NestedUnited@Gmail.com",
+      "url": "https://nestedunited.com"
+    },
+    "license": {
+      "name": "All Rights Reserved",
+      "url": "https://nestedunited.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://nestedunited.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/llms.txt": {
+      "get": {
+        "summary": "LLM-readable site manifest",
+        "description": "Returns structured plain-text content about Nested United for LLM consumption, following the llmstxt.org standard.",
+        "operationId": "getLLMsText",
+        "responses": {
+          "200": {
+            "description": "LLM-readable content",
+            "content": {
+              "text/plain": {
+                "schema": { "type": "string" }
+              }
+            }
+          }
+        },
+        "tags": ["Discovery"]
+      }
+    },
+    "/content.md": {
+      "get": {
+        "summary": "Markdown content of the website",
+        "description": "Returns the full website content in Markdown format for AI parsing and indexing.",
+        "operationId": "getMarkdownContent",
+        "responses": {
+          "200": {
+            "description": "Markdown website content",
+            "content": {
+              "text/markdown": {
+                "schema": { "type": "string" }
+              }
+            }
+          }
+        },
+        "tags": ["Content"]
+      }
+    },
+    "/.well-known/ai-plugin.json": {
+      "get": {
+        "summary": "AI Plugin manifest",
+        "description": "ChatGPT / OpenAI Actions compatible plugin manifest.",
+        "operationId": "getAIPlugin",
+        "responses": {
+          "200": {
+            "description": "Plugin manifest JSON",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object" }
+              }
+            }
+          }
+        },
+        "tags": ["Discovery"]
+      }
+    }
+  },
+  "tags": [
+    { "name": "Discovery", "description": "AI and agent discoverability endpoints" },
+    { "name": "Content", "description": "Content access endpoints" }
+  ],
+  "info_extensions": {
+    "x-region": "SA",
+    "x-city": "Jeddah",
+    "x-languages": ["ar-SA", "en-US"],
+    "x-ai-accessible": true
+  }
+}

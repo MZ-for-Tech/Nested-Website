@@ -1,0 +1,14 @@
+{
+  "mpp_version": "1.0",
+  "name": "Nested United Payment Gateway",
+  "supported_currencies": ["SAR"],
+  "payment_endpoints": {
+    "tokenize": "https://nestedunited.com/api/mpp/tokenize",
+    "charge": "https://nestedunited.com/api/mpp/charge",
+    "status": "https://nestedunited.com/api/mpp/status"
+  },
+  "authentication": {
+    "type": "oauth2",
+    "token_endpoint": "https://nestedunited.com/oauth/token"
+  }
+}

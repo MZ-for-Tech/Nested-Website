@@ -1,0 +1,15 @@
+{
+  "acp_version": "1.0",
+  "name": "Nested United Agent Commerce",
+  "merchant_id": "nested_united_sa",
+  "supported_intents": ["buy_service", "book_consultation", "rent_property"],
+  "intent_endpoints": {
+    "buy_service": "https://nestedunited.com/api/acp/services/buy",
+    "book_consultation": "https://nestedunited.com/api/acp/consultation/book",
+    "rent_property": "https://nestedunited.com/api/acp/property/rent"
+  },
+  "auth": {
+    "type": "oauth2",
+    "scopes": ["commerce:write"]
+  }
+}

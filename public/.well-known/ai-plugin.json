@@ -1,0 +1,29 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Nested United",
+  "name_for_model": "nested_united",
+  "description_for_human": "Nested United — شركة سعودية متكاملة في جدة تقدم خدمات تقنية، عقارات، تصميم، تسويق، وفعاليات. Saudi integrated business ecosystem in Jeddah.",
+  "description_for_model": "Nested United is a Saudi-based company in Jeddah offering: (1) TechNest: website creation, e-commerce, IT solutions; (2) OpNest: real estate operations, daily/monthly rental, Airbnb & Gathern management; (3) PrintNest: graphic design, logo design, printing, digital marketing, advertising; (4) JoyNest: event planning, conferences, exhibitions, hospitality; (5) TheNest: boutique hospitality. Serves clients in Arabic and English across Saudi Arabia. Contact: +966549799468, NestedUnited@Gmail.com.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://nestedunited.com/.well-known/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://nestedunited.com/ASSETS/logos/logo.svg",
+  "contact_email": "NestedUnited@Gmail.com",
+  "legal_info_url": "https://nestedunited.com",
+  "privacy_policy_url": "https://nestedunited.com",
+  "categories": [
+    "business",
+    "technology",
+    "real_estate",
+    "marketing",
+    "events"
+  ],
+  "language": ["ar", "en"],
+  "region": "SA",
+  "city": "Jeddah"
+}

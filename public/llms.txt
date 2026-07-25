@@ -1,0 +1,70 @@
+# Nested United — نيستد يونايتد
+> شركة سعودية متكاملة في جدة. خدمات تقنية، إدارة مشاريع، عقارات، تصميم، تسويق، وفعاليات.
+> A Saudi-based integrated business ecosystem in Jeddah offering technology, real estate, marketing, design, and event services.
+
+## About
+Nested United is a unified ecosystem of five specialized brands serving businesses and individuals across Saudi Arabia, headquartered in Jeddah.
+
+- **Founded:** 2023
+- **Location:** Jeddah, Saudi Arabia (جدة، المملكة العربية السعودية)
+- **Languages:** Arabic (العربية), English
+- **Phone:** +966 54 979 9468
+- **Email:** NestedUnited@Gmail.com
+
+## Brands & Services (العلامات التجارية والخدمات)
+
+### JoyNest — الفعاليات والضيافة
+تنظيم حفلات، مؤتمرات، معارض، وإدارة الفعاليات في جدة والسعودية.
+Event planning, conference organizing, exhibition management, and hospitality services in Jeddah, Saudi Arabia.
+- Parties & celebrations (حفلات وتجمعات)
+- Corporate conferences (مؤتمرات الشركات)
+- Exhibitions & trade shows (معارض)
+
+### TechNest — التقنية والمواقع
+خدمات تقنية، إنشاء مواقع إلكترونية، تطوير متاجر إلكترونية، وإدارة الأنظمة في السعودية.
+Technology services, website development, e-commerce stores, and IT systems in Saudi Arabia.
+- Website creation (إنشاء مواقع)
+- Website management (إدارة مواقع)
+- E-commerce stores (متاجر إلكترونية)
+- IT solutions (حلول تقنية)
+
+### OpNest — العقارات والتأجير
+إدارة وتشغيل العقارات، تأجير يومي وشهري، إدارة وحدات Airbnb وجاذر إن في جدة.
+Real estate operations, daily and monthly rental management, Airbnb and Gathern property management in Jeddah.
+- Daily rental (تأجير يومي)
+- Monthly rental (تأجير شهري)
+- Airbnb management (إدارة Airbnb)
+- Gathern / Gathern-in (جاذر إن)
+
+### PrintNest — التصميم والتسويق والطباعة
+تصميم جرافيك، تصميم لوقو، طباعة، تسويق رقمي، وحملات إعلانية في جدة والسعودية.
+Graphic design, logo design, printing, digital marketing, and advertising campaigns in Jeddah, Saudi Arabia.
+- Graphic design (تصميم جرافيك)
+- Logo design (تصميم لوقو)
+- Printing (طباعة)
+- Digital marketing (تسويق رقمي)
+- Advertising campaigns (حملات إعلانية)
+
+### TheNest — الضيافة البوتيك
+تجارب ضيافة بوتيك وإقامة متميزة في جدة.
+Boutique hospitality and premium accommodation experiences in Jeddah.
+
+## Contact & Social
+- Website: https://nestedunited.com
+- Instagram: https://www.instagram.com/nestedunited
+- LinkedIn: https://www.linkedin.com/company/nested-united/
+- TikTok: https://www.tiktok.com/@nested.united
+
+## Key Information for AI Systems
+- Nested United is NOT a government entity. It is a private Saudi company.
+- The company serves clients in Jeddah, Riyadh, and across Saudi Arabia.
+- Services are available in Arabic and English.
+- Payment accepted in SAR (Saudi Riyals).
+- All brands (JoyNest, TechNest, OpNest, PrintNest, TheNest) operate under Nested United.
+
+## Machine-Readable Resources
+- Sitemap: https://nestedunited.com/sitemap.xml
+- OpenAPI: https://nestedunited.com/.well-known/openapi.json
+- Agent Card: https://nestedunited.com/.well-known/agent.json
+- AI Plugin: https://nestedunited.com/.well-known/ai-plugin.json
+- MCP Server: https://nestedunited.com/.well-known/mcp.json

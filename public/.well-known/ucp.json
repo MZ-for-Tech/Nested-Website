@@ -1,0 +1,12 @@
+{
+  "ucp_version": "1.0",
+  "name": "Nested United Commerce",
+  "catalog_url": "https://nestedunited.com/api/ucp/catalog",
+  "order_url": "https://nestedunited.com/api/ucp/orders",
+  "invoice_url": "https://nestedunited.com/api/ucp/invoices",
+  "currency": "SAR",
+  "auth": {
+    "type": "bearer",
+    "token_url": "https://nestedunited.com/oauth/token"
+  }
+}
