@@ -28,10 +28,10 @@ const LanguageContext = createContext<LanguageContextType>({
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
 
-  // Restore saved preference on mount
   useEffect(() => {
     const saved = localStorage.getItem("nu-lang") as Lang | null;
     if (saved === "en" || saved === "ar") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLangState(saved);
     }
   }, []);

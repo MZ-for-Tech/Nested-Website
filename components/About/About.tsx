@@ -13,10 +13,14 @@ export default function About() {
       {/* Marquee Ticker Top Bar */}
       <div className={styles.tickerBar}>
         <div className={styles.tickerContent}>
-          <span>{ticker}</span>
-          <span>{ticker}</span>
-          <span>{ticker}</span>
-          <span>{ticker}</span>
+          {Array(8).fill(ticker).map((t, i) => (
+            <span key={i}>{t}</span>
+          ))}
+        </div>
+        <div className={styles.tickerContent} aria-hidden="true">
+          {Array(8).fill(ticker).map((t, i) => (
+            <span key={i}>{t}</span>
+          ))}
         </div>
       </div>
 

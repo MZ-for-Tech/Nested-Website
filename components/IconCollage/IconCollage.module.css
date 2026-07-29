@@ -132,6 +132,3 @@
 }
 
 /* Image 14 */
-:global([dir="rtl"]) .icon10 {
-  transform: scaleX(-1);
-}

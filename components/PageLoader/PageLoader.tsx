@@ -57,7 +57,7 @@ export default function PageLoader() {
           {/* Main nestedunited logo */}
           <div className={styles.mainLogoWrapper}>
             <Image
-              src="/ASSETS/logos/nestedunited.svg"
+              src="/ASSETS/logos/logo.svg"
               alt="Nested United"
               fill
               priority

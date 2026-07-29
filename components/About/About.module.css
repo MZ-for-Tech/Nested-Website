@@ -22,8 +22,13 @@
   font-weight: 900;
   font-size: 1.5rem;
   letter-spacing: 0.1em;
-  animation: marquee 20s linear infinite;
+  animation: marquee 35s linear infinite;
   width: max-content;
+  flex-shrink: 0;
+}
+
+:global([dir="rtl"]) .tickerContent {
+  animation-name: marquee-rtl;
 }
 
 .tickerContent span {
@@ -35,7 +40,16 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 

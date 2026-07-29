@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "./SmartOperations.module.css";
 import DotsIcon from "../IconCollage/DotsIcon";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -67,9 +68,11 @@ ${formData.message}`;
       <div className={styles.container}>
         {/* Left Column - Full Bleed Image */}
         <div className={styles.leftColumn}>
-          <img
+          <Image
             src="/ASSETS/pics/hq2.png"
             alt="Nested United modern office interior with team collaboration spaces"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className={styles.image}
           />
         </div>

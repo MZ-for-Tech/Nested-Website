@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 import IconCollage from "../IconCollage/IconCollage";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -128,6 +129,14 @@ export default function Footer() {
         {/* Right Column - Collage */}
         <div className={styles.rightColumn}>
           <IconCollage className={styles.footerCollage} />
+          <div className={styles.handImageWrapper}>
+            <Image
+              src="/ASSETS/pics/hand.png"
+              alt="Customer Service"
+              fill
+              className={styles.handImage}
+            />
+          </div>
         </div>
       </div>
 

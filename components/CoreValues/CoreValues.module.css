@@ -75,7 +75,7 @@
 /* ── Gear spin ── */
 @keyframes gearSpin {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  to   { transform: rotate(-360deg); }
 }
 .gearGroup {
   animation: gearSpin 6s linear infinite;
