@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Red_Hat_Display, Geist_Mono, IBM_Plex_Sans_Arabic } from "next/font/google";
 import PageLoader from "@/components/PageLoader/PageLoader";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import ClarityInit from "@/components/ClarityInit/ClarityInit";
 import "./globals.css";
 
 const redHatDisplay = Red_Hat_Display({
@@ -157,6 +158,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body className="min-h-full flex flex-col m-0 p-0">
+        <ClarityInit />
         <LanguageProvider>
           <a href="#main-content" className="skip-link">Skip to main content</a>
           <PageLoader />
