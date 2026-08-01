@@ -1,0 +1,21 @@
+/* The cursor character */
+.cursor {
+  display: inline;
+  font-weight: 300;
+  margin-left: 2px;
+  transition: opacity 0.08s ease;
+  /* Match the heading color */
+  color: inherit;
+}
+
+.cursorVisible {
+  opacity: 1;
+}
+
+.cursorHidden {
+  opacity: 0;
+}
+
+.wrapper {
+  display: inline;
+}

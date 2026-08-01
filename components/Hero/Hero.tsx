@@ -5,10 +5,11 @@ import { useState, useEffect } from "react";
 import styles from "./Hero.module.css";
 import IconCollage from "../IconCollage/IconCollage";
 import MobileHeroCollage from "./MobileHeroCollage";
+import TypewriterHeading from "./TypewriterHeading";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
-  const { tr } = useLanguage();
+  const { tr, lang } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -54,8 +55,18 @@ export default function Hero() {
 
         {/* Text Content */}
         <div className={`${styles.content} ${styles.animHeading}`}>
-          <h1 className={styles.heading} style={{ whiteSpace: "pre-line" }}>
-            {tr.hero.heading}
+          <h1 className={styles.heading}>
+            <TypewriterHeading
+              phrases={
+                lang === "ar"
+                  ? ["ابدأ مشروعك\nمعنا", "من العمليات\nإلى النمو"]
+                  : ["Start your project\nwith us", "From Operations\nto Growth"]
+              }
+              typingSpeed={60}
+              deletingSpeed={35}
+              pauseAfterType={2400}
+              pauseAfterDelete={500}
+            />
           </h1>
         </div>
 
