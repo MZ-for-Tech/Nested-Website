@@ -15,6 +15,11 @@ export default function StructuredData() {
       width: 360,
       height: 150,
     },
+    image: [
+      "https://nestedunited.com/og-image.png",
+      "https://nestedunited.com/icon-512.png",
+      "https://nestedunited.com/ASSETS/logos/logo.svg",
+    ],
     description:
       "Nested United is a Saudi-based integrated business ecosystem offering technology services, project management, real estate operations, graphic design, printing, digital marketing, event planning, and e-commerce solutions in Jeddah and across Saudi Arabia. نيستد يونايتد شركة سعودية متكاملة تقدم خدمات تقنية، إدارة مشاريع، تشغيل عقارات، تصميم جرافيك، طباعة، تسويق رقمي، تنظيم فعاليات وحفلات في جدة والمملكة العربية السعودية.",
     foundingDate: "2023",
@@ -142,7 +147,11 @@ export default function StructuredData() {
     "@id": "https://nestedunited.com/#localbusiness",
     name: "Nested United",
     alternateName: "نيستد يونايتد",
-    image: "https://nestedunited.com/ASSETS/logos/logo.svg",
+    image: [
+      "https://nestedunited.com/og-image.png",
+      "https://nestedunited.com/icon-512.png",
+      "https://nestedunited.com/ASSETS/logos/logo.svg",
+    ],
     telephone: "+966549799468",
     email: "NestedUnited@Gmail.com",
     url: "https://nestedunited.com",

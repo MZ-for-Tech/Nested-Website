@@ -98,7 +98,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ar_SA",
-    alternateLocale: "en_US",
+    alternateLocale: ["en_US"],
     url: "https://nestedunited.com",
     siteName: "Nested United",
     title: "Nested United | خدمات تقنية، عقارات، تسويق، فعاليات – جدة، السعودية",
@@ -106,19 +106,21 @@ export const metadata: Metadata = {
       "Nested United — نظام بيئي متكامل من العلامات التجارية المتخصصة: JoyNest للفعاليات، TechNest للتقنية، OpNest للعقارات، PrintNest للطباعة والتسويق، TheNest للضيافة. خدماتنا في جدة والمملكة العربية السعودية.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://nestedunited.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Nested United – From Operations to Growth | جدة، السعودية",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@nestedunited",
     title: "Nested United | خدمات متكاملة في جدة – تقنية، عقارات، تسويق، فعاليات",
     description:
       "نظام بيئي متكامل من العلامات التجارية المتخصصة. خدمات تقنية، إدارة عقارات، تصميم، طباعة، تنظيم فعاليات في جدة والسعودية.",
-    images: ["/og-image.png"],
+    images: ["https://nestedunited.com/og-image.png"],
     creator: "@nestedunited",
   },
   robots: {
@@ -134,8 +136,15 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "192x192", type: "image/png" },
+    ],
   },
   category: "business",
   classification: "Business Services, Technology, Real Estate, Marketing",
