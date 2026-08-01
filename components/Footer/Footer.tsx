@@ -128,7 +128,9 @@ export default function Footer() {
 
         {/* Right Column - Collage */}
         <div className={styles.rightColumn}>
-          <IconCollage className={styles.footerCollage} />
+          <div className={styles.collagePositioner}>
+            <IconCollage />
+          </div>
           <div className={styles.handImageWrapper}>
             <Image
               src="/ASSETS/pics/hand.webp"
