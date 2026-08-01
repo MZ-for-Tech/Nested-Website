@@ -46,9 +46,11 @@ export default function About() {
             <div className={styles.imageDecor}></div>
             <div className={styles.imageWrapper}>
               <Image
-                src="/ASSETS/pics/hq.png"
+                src="/ASSETS/pics/hq.webp"
                 alt="Nested United office branding"
                 fill
+                loading="lazy"
+                quality={82}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className={styles.image}
               />

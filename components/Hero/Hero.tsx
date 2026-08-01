@@ -20,14 +20,14 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} aria-label={tr.hero.sideText}>
-      {/* Right Column - Background Image (desktop only) */}
       <div className={styles.rightColumn}>
         <Image
-          src="/ASSETS/pics/building.png"
+          src="/ASSETS/pics/building.webp"
           alt="Nested United modern office building exterior"
           fill
           priority
-          sizes="40vw"
+          quality={85}
+          sizes="(max-width: 768px) 0vw, 40vw"
           className={styles.rightImage}
         />
       </div>

@@ -20,8 +20,8 @@ export default function Partners() {
   const { tr } = useLanguage();
 
   const logos = [
-    "1.png", "2.png", "3.png", "4.png",
-    "5.png", "6.png", "7.png", "8.png",
+    "1.webp", "2.webp", "3.webp", "4.webp",
+    "5.webp", "6.webp", "7.webp", "8.webp",
   ];
 
   return (
@@ -42,6 +42,8 @@ export default function Partners() {
               src={`/ASSETS/par-logos/${filename}`}
               alt={`${partnerNames[index]} — Nested United partner`}
               fill
+              loading="lazy"
+              quality={85}
               sizes="(max-width: 600px) 45vw, (max-width: 1024px) 22vw, 12vw"
               className={styles.logo}
             />

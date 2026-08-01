@@ -69,9 +69,11 @@ ${formData.message}`;
         {/* Left Column - Full Bleed Image */}
         <div className={styles.leftColumn}>
           <Image
-            src="/ASSETS/pics/hq2.png"
+            src="/ASSETS/pics/hq2.webp"
             alt="Nested United modern office interior with team collaboration spaces"
             fill
+            loading="lazy"
+            quality={82}
             sizes="(max-width: 1024px) 100vw, 50vw"
             className={styles.image}
           />

@@ -131,9 +131,12 @@ export default function Footer() {
           <IconCollage className={styles.footerCollage} />
           <div className={styles.handImageWrapper}>
             <Image
-              src="/ASSETS/pics/hand.png"
+              src="/ASSETS/pics/hand.webp"
               alt="Customer Service"
               fill
+              loading="lazy"
+              quality={82}
+              sizes="(max-width: 1024px) 350px, 600px"
               className={styles.handImage}
             />
           </div>
