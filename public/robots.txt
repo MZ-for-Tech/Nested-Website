@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
 
-# Block internal Next.js paths
+# Block internal Next.js paths but allow static assets & optimized images
+Allow: /_next/static/
+Allow: /_next/image
 Disallow: /_next/
 Disallow: /api/
 
