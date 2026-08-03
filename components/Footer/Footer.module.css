@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   min-height: 100vh;
-  background-color: #fffbf3;
+  background-color: var(--brand-offwhite);
   /* Light beige matching screenshot */
   position: relative;
   overflow: hidden;
@@ -32,7 +32,7 @@
   font-size: 3.2rem;
   line-height: 1.1;
   font-weight: 800;
-  color: #100f0d;
+  color: var(--brand-black);
   margin: 0 0 4rem 0;
   letter-spacing: -0.02em;
 }
@@ -48,14 +48,14 @@
 .contactTitle {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #100f0d;
+  color: var(--brand-black);
   margin: 0 0 1rem 0;
   text-transform: uppercase;
 }
 
 .contactText {
   font-size: 1.25rem;
-  color: #100f0d;
+  color: var(--brand-black);
   margin: 0;
 }
 
@@ -71,7 +71,7 @@
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  color: #100f0d;
+  color: var(--brand-black);
   transition: opacity 0.2s;
 }
 
@@ -302,7 +302,7 @@
 
 .contactTextInteractive {
   font-size: 1.25rem;
-  color: #100f0d;
+  color: var(--brand-black);
   margin: 0;
   font-weight: 600;
 }
@@ -312,7 +312,7 @@
   align-items: center;
   font-size: 0.8rem;
   font-weight: 700;
-  color: #ee1d52;
+  color: var(--brand-red);
   background: rgba(238, 29, 82, 0.12);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
@@ -323,8 +323,8 @@
 /* ── Sub-Footer Bar ── */
 .subFooter {
   width: 100%;
-  background-color: #100f0d;
-  color: #fffbf3;
+  background-color: var(--brand-black);
+  color: var(--brand-offwhite);
   padding: 1.25rem 2rem;
   box-sizing: border-box;
   z-index: 20;
@@ -345,14 +345,14 @@
 
 .copyrightText {
   margin: 0;
-  color: #d1d1d1;
+  color: var(--brand-gray);
   font-weight: 500;
   letter-spacing: 0.02em;
 }
 
 .developerText {
   margin: 0;
-  color: #d1d1d1;
+  color: var(--brand-gray);
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -367,6 +367,6 @@
 }
 
 .developerLink:hover {
-  color: #ffd834;
-  text-decoration-color: #ffd834;
+  color: var(--brand-yellow);
+  text-decoration-color: var(--brand-yellow);
 }

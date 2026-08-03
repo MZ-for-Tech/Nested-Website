@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import IconCollage from "../IconCollage/IconCollage";
@@ -44,6 +44,29 @@ export default function Footer() {
   const { tr, lang } = useLanguage();
   const f = tr.footer;
   const [copiedState, setCopiedState] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Obfuscation helpers
+  const deobfuscate = (str: string) => str.split("").reverse().join("");
+
+  const phoneRev = "86499794569+"; // +966549799468
+  const mainEmailRev = "moc.liamG@detinUdetseN";
+  const careersEmailRev = "moc.liamg@detsen.sreeraC";
+
+  const renderObfuscated = (reversed: string) => {
+    if (!mounted) {
+      return (
+        <span style={{ unicodeBidi: "bidi-override", direction: "rtl" }}>
+          {reversed}
+        </span>
+      );
+    }
+    return deobfuscate(reversed);
+  };
 
   const handleCopy = (text: string, type: string) => {
     if (navigator.clipboard) {
@@ -66,9 +89,11 @@ export default function Footer() {
             <p className={styles.contactText}>{f.location}</p>
             <div
               className={styles.clickableContact}
-              onClick={() => handleCopy("+966549799468", "phone")}
+              onClick={() => handleCopy(deobfuscate(phoneRev), "phone")}
             >
-              <p className={styles.contactTextInteractive}>{f.customerService}</p>
+              <p className={styles.contactTextInteractive}>
+                {renderObfuscated(phoneRev)}
+              </p>
               {copiedState === "phone" && (
                 <span className={styles.copiedToast}>
                   {lang === "ar" ? "تم النسخ!" : "Copied!"}
@@ -81,9 +106,11 @@ export default function Footer() {
             <h3 className={styles.contactTitle}>{f.email}</h3>
             <div
               className={styles.clickableContact}
-              onClick={() => handleCopy("NestedUnited@Gmail.com", "email")}
+              onClick={() => handleCopy(deobfuscate(mainEmailRev), "email")}
             >
-              <p className={styles.contactTextInteractive}>NestedUnited@Gmail.com</p>
+              <p className={styles.contactTextInteractive}>
+                {renderObfuscated(mainEmailRev)}
+              </p>
               {copiedState === "email" && (
                 <span className={styles.copiedToast}>
                   {lang === "ar" ? "تم النسخ!" : "Copied!"}
@@ -96,9 +123,11 @@ export default function Footer() {
             <h3 className={styles.contactTitle}>{f.careersEmailLabel}</h3>
             <div
               className={styles.clickableContact}
-              onClick={() => handleCopy("Careers.nested@gmail.com", "careers")}
+              onClick={() => handleCopy(deobfuscate(careersEmailRev), "careers")}
             >
-              <p className={styles.contactTextInteractive}>Careers.nested@gmail.com</p>
+              <p className={styles.contactTextInteractive}>
+                {renderObfuscated(careersEmailRev)}
+              </p>
               {copiedState === "careers" && (
                 <span className={styles.copiedToast}>
                   {lang === "ar" ? "تم النسخ!" : "Copied!"}

@@ -6,7 +6,7 @@
   z-index: 9000;
   display: flex;
   align-items: center;
-  background: #0a0a0a;
+  background: var(--brand-black);
   border-radius: 999px;
   padding: 5px;
   gap: 3px;
@@ -41,8 +41,8 @@
 }
 
 .btn.active {
-  background: #ffdb3d;
-  color: #0a0a0a;
+  background: var(--brand-yellow);
+  color: var(--brand-black);
   box-shadow: 0 2px 8px rgba(255, 219, 61, 0.35);
 }
 

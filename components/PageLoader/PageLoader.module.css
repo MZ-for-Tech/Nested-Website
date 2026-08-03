@@ -3,7 +3,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: #fffbf3;
+  background-color: var(--brand-offwhite);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,7 +158,7 @@
 
 .progressBar {
   height: 100%;
-  background: linear-gradient(90deg, #4f72ff, #EE1D52, #ffdb3d);
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-red), var(--brand-yellow));
   animation: progress 2.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 

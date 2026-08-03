@@ -2,15 +2,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #fffbf3;
+  background-color: var(--brand-offwhite);
   overflow: hidden;
 }
 
 /* Ticker Bar */
 .tickerBar {
   width: 100%;
-  background-color: #100f0d;
-  color: #ffd834;
+  background-color: var(--brand-black);
+  color: var(--brand-yellow);
   padding: 1rem 0;
   display: flex;
   overflow: hidden;
@@ -67,7 +67,7 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 5.5rem 4rem 4rem;
-  background-color: #fffbf3;
+  background-color: var(--brand-offwhite);
 }
 
 .imageContainer {
@@ -82,7 +82,7 @@
   right: -1.5rem;
   width: 100%;
   height: 100%;
-  background-color: #ffd834;
+  background-color: var(--brand-yellow);
   z-index: 0;
 }
 
@@ -112,7 +112,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background-color: #fffbf3;
+  background-color: var(--brand-offwhite);
   padding: 4rem 4rem 4rem 5.5rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -128,7 +128,7 @@
 .tag {
   font-size: 1rem;
   font-weight: 900;
-  color: #ee1d52;
+  color: var(--brand-red);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 2rem;
@@ -142,13 +142,13 @@
   display: block;
   width: 50px;
   height: 4px;
-  background-color: #ee1d52;
+  background-color: var(--brand-red);
 }
 
 .heading {
   font-size: clamp(3.5rem, 6vw, 5.5rem);
   font-weight: 900;
-  color: #100f0d;
+  color: var(--brand-black);
   margin: 0 0 2rem 0;
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -156,17 +156,17 @@
 }
 
 .headingAccent {
-  color: #4f72ff;
+  color: var(--brand-blue);
 }
 
 .text {
   font-size: 1.25rem;
-  color: #100f0d;
+  color: var(--brand-black);
   line-height: 1.7;
   margin: 0;
   font-weight: 500;
   padding-left: 2rem;
-  border-left: 4px solid #ee1d52;
+  border-left: 4px solid var(--brand-red);
 }
 
 /* Responsive */

@@ -3,7 +3,7 @@
   width: 100%;
   height: 100vh;
   min-height: 800px;
-  background-color: #fffbf3;
+  background-color: var(--brand-offwhite);
   overflow: hidden;
   display: flex;
 }
@@ -20,9 +20,8 @@
 .rightImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: left center;
-  transform: scale(1.2) translateX(10%);
+  object-fit: contain;
+  object-position: right center;
 }
 
 .leftColumn {
@@ -31,7 +30,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fffbf3;
+  background-color: var(--brand-offwhite);
   z-index: 2;
   /* Steeper slant cutting through building */
   clip-path: polygon(0 0, 73% 0, 83% 100%, 0 100%);
@@ -58,8 +57,16 @@
   font-size: 4.8rem;
   line-height: 1.2;
   font-weight: 800;
-  color: #100f0d;
+  color: var(--brand-black);
   margin: 0;
+  white-space: pre-wrap;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--brand-black);
+  margin-top: 1rem;
 }
 
 .collage {
@@ -86,28 +93,59 @@
 
 /* ── Staggered Entrance Animations ── */
 @keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
+
 @keyframes collageIn {
-  from { opacity: 0; transform: scale(0.95) translateY(16px); }
-  to   { opacity: 1; transform: scale(1.1) translateY(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.1) translateY(0);
+  }
 }
 
 .animLogo {
   animation: fadeDown 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
+
 .animHeading {
   animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
+
 .sideTextWrapper {
   animation: fadeIn 1s ease 0.5s both;
 }
@@ -133,14 +171,12 @@
   text-transform: uppercase;
   white-space: nowrap;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(16, 15, 13, 0.2) 0%,
-    rgba(16, 15, 13, 0.2) 40%,
-    #100f0d 50%,
-    rgba(16, 15, 13, 0.2) 60%,
-    rgba(16, 15, 13, 0.2) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(16, 15, 13, 0.2) 0%,
+      rgba(16, 15, 13, 0.2) 40%,
+      var(--brand-black) 50%,
+      rgba(16, 15, 13, 0.2) 60%,
+      rgba(16, 15, 13, 0.2) 100%);
   background-size: 100% 200%;
   background-position: 0% 0%;
   -webkit-background-clip: text;
@@ -151,8 +187,13 @@
 }
 
 @keyframes textSweep {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 0% 200%; }
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 0% 200%;
+  }
 }
 
 
@@ -173,77 +214,90 @@
 
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column;
-    height: auto;
-    min-height: 100svh;
+    height: 100svh;
+    min-height: 700px;
     overflow: hidden;
   }
 
   .leftColumn {
-    clip-path: none;
-    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 40%);
+    position: absolute;
     width: 100%;
-    min-height: 100svh;
-    padding: 90px 24px 40px 24px;
-    box-sizing: border-box;
+    height: 100%;
+    background-color: var(--brand-offwhite);
+    z-index: 2;
+    padding: 22vh 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 28px;
-    overflow: hidden;
   }
 
   .rightColumn {
-    display: none;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: auto;
+    width: 100%;
+    height: 70%;
+    z-index: 1;
   }
 
   .rightImage {
-    transform: none;
-    object-position: center center;
+    object-position: top center;
+    object-fit: cover;
+    transform: scale(1.5);
+    transform-origin: center top;
   }
 
   .logo {
-    position: relative;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: 20px;
+    left: 30px;
     width: 200px;
     flex-shrink: 0;
   }
 
   .content {
-    margin-top: 0;
-    margin-left: 0;
-    max-width: 100%;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 50px;
+    max-width: 340px;
+    z-index: 10;
   }
 
   .heading {
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: 2.7rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
   }
 
-  /* Show the clean mobile collage grid */
-  .mobileCollageWrapper {
-    display: block;
-    width: 100%;
-    flex-shrink: 0;
+  .subtitle {
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
   }
 
-  /* Hide the desktop absolute-positioned collage */
+  .sideTextWrapper {
+    display: flex;
+    left: 10px;
+  }
+
+  .sideText {
+    font-size: 1rem;
+  }
+
+  /* Hide desktop collage */
   .collage {
     display: none !important;
   }
 
-  .sideTextWrapper {
+  /* Hide old mobile wrapper */
+  .mobileCollageWrapper {
     display: none;
   }
 
-  /* Bold accent bar at the bottom */
   .mobileAccent {
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, #ffd834 0%, #ffd834 50%, #ee1d52 50%, #ee1d52 100%);
-    border-radius: 3px;
-    margin-top: auto;
+    display: none;
   }
 }
 
@@ -273,18 +327,19 @@
 
 @media (max-width: 768px) {
   :global([dir="rtl"]) .logo {
-    left: 0;
+    left: auto;
+    right: 45px;
   }
 
   :global([dir="rtl"]) .content {
     margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
+    margin-right: 50px;
+    max-width: 340px;
     text-align: right;
   }
 
   :global([dir="rtl"]) .heading {
-    font-size: 2.5rem;
-    line-height: 1.25;
+    font-size: 2.7rem;
+    line-height: 1.1;
   }
 }

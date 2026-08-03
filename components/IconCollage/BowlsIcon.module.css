@@ -116,7 +116,7 @@
 
   35%,
   65% {
-    fill: #ffd834;
+    fill: var(--brand-yellow);
   }
 
   85%,

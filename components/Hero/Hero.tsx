@@ -4,8 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import styles from "./Hero.module.css";
 import IconCollage from "../IconCollage/IconCollage";
-import MobileHeroCollage from "./MobileHeroCollage";
-import TypewriterHeading from "./TypewriterHeading";
+import { TopRightCluster, BottomRightCluster } from "./MobileHeroClusters";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
@@ -28,18 +27,18 @@ export default function Hero() {
           fill
           priority
           quality={85}
-          sizes="(max-width: 768px) 0vw, 40vw"
+          sizes="(max-width: 768px) 100vw, 40vw"
           className={styles.rightImage}
         />
       </div>
 
+      {/* Vertical Side Text */}
+      <div className={styles.sideTextWrapper}>
+        <div className={styles.sideText}>{tr.hero.sideText}</div>
+      </div>
+
       {/* Left Column */}
       <div className={styles.leftColumn}>
-        {/* Vertical Side Text */}
-        <div className={styles.sideTextWrapper}>
-          <div className={styles.sideText}>{tr.hero.sideText}</div>
-        </div>
-
         {/* Logo */}
         <div className={`${styles.logo} ${styles.animLogo}`}>
           <Image
@@ -56,32 +55,28 @@ export default function Hero() {
         {/* Text Content */}
         <div className={`${styles.content} ${styles.animHeading}`}>
           <h1 className={styles.heading}>
-            <TypewriterHeading
-              phrases={
-                lang === "ar"
-                  ? ["ابدأ مشروعك\nمعنا", "من العمليات\nإلى النمو"]
-                  : ["Start your project\nwith us", "From Operations\nto Growth"]
-              }
-              typingSpeed={60}
-              deletingSpeed={35}
-              pauseAfterType={2400}
-              pauseAfterDelete={500}
-            />
+            {lang === "ar" ? "ابدأ مشروعك\nمعنا" : "Start your project\nwith us"}
           </h1>
+          <p className={styles.subtitle}>
+            {lang === "ar" ? "من العمليات إلى النمو." : "From Operations to Growth."}
+          </p>
         </div>
 
         {/* Collage — conditionally render desktop or mobile version */}
-        {isMobile ? (
-          <div className={styles.mobileCollageWrapper}>
-            <MobileHeroCollage />
-          </div>
-        ) : (
+        {!isMobile && (
           <IconCollage className={styles.collage} />
         )}
 
         {/* Mobile accent bar */}
         {isMobile && <div className={styles.mobileAccent} aria-hidden="true" />}
       </div>
+
+      {isMobile && (
+        <>
+          <TopRightCluster />
+          <BottomRightCluster />
+        </>
+      )}
     </section>
   );
 }

@@ -25,7 +25,7 @@ export default function Brands() {
   const blocks = [
     {
       id: "store",
-      bgColor: "#0a0a0a",
+      bgColor: "var(--brand-black)",
       title: b.storeTitle,
       subtitle: b.storeSubtitle,
       titleColor: "#fff",
@@ -35,18 +35,18 @@ export default function Brands() {
     },
     {
       id: "joynest",
-      bgColor: "#ff5054",
+      bgColor: "var(--brand-red)",
       logoName: "JOYNEST",
       logoSub: "Event.",
       description: b.joynestDesc,
-      titleColor: "#fff",
-      arrowColor: "#fff",
+      titleColor: "var(--brand-black)",
+      arrowColor: "var(--brand-black)",
       type: "logo",
       linkUrl: "https://linktr.ee/joy_nest",
     },
     {
       id: "stay",
-      bgColor: "#0a0a0a",
+      bgColor: "var(--brand-black)",
       title: b.stayTitle,
       titleColor: "#fff",
       arrowColor: "#fff",
@@ -55,34 +55,34 @@ export default function Brands() {
     },
     {
       id: "technest",
-      bgColor: "#4f72ff",
+      bgColor: "var(--brand-blue)",
       logoName: "TECHNEST",
       logoSub: "Dept.",
       description: b.technestDesc,
-      titleColor: "#100f0d",
-      arrowColor: "#100f0d",
+      titleColor: "var(--brand-black)",
+      arrowColor: "var(--brand-black)",
       type: "logo",
       linkUrl: "/ASSETS/files/technest.pdf",
     },
     {
       id: "opnest",
-      bgColor: "#ffdb3d",
+      bgColor: "var(--brand-yellow)",
       logoName: "OPNEST",
       logoSub: "Dept.",
       description: b.opnestDesc,
-      titleColor: "#100f0d",
-      arrowColor: "#100f0d",
+      titleColor: "var(--brand-black)",
+      arrowColor: "var(--brand-black)",
       type: "logo",
       linkUrl: "/ASSETS/files/opnest.pdf",
     },
     {
       id: "printnest",
-      bgColor: "#22c55e",
+      bgColor: "var(--brand-green)",
       logoName: "PRINTNEST",
       logoSub: "Dept.",
       description: b.printnestDesc,
-      titleColor: "#100f0d",
-      arrowColor: "#100f0d",
+      titleColor: "var(--brand-black)",
+      arrowColor: "var(--brand-black)",
       type: "logo",
       linkUrl: "/ASSETS/files/printnest.pdf",
     }
@@ -112,8 +112,8 @@ export default function Brands() {
           >
             <div className={styles.signatureContent}>
               <div className={styles.logoBlock}>
-                <h3 className={styles.logoText} style={{ color: "#100f0d" }}>THENEST</h3>
-                <span className={styles.logoSub} style={{ color: "#100f0d" }}>Boutique.</span>
+                <h3 className={styles.logoText} style={{ color: "var(--brand-black)" }}>THENEST</h3>
+                <span className={styles.logoSub} style={{ color: "var(--brand-black)" }}>Boutique.</span>
               </div>
               <div className={styles.signatureBottom}>
                 <h4 className={styles.signatureTitle} style={{ color: "#fff", whiteSpace: "pre-line" }}>{b.signatureTitle}</h4>

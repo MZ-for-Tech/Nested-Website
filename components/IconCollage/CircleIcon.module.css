@@ -2,8 +2,8 @@
   width: 100%;
   height: 100%;
   position: relative;
-  /* Diagonal split background: bottom half #ff4d39, top half #5170ff */
-  background: linear-gradient(to top right, #ff4d39 50%, #5170ff 50%);
+  /* Diagonal split background: bottom half var(--brand-red), top half var(--brand-blue) */
+  background: linear-gradient(to top right, var(--brand-red) 50%, var(--brand-blue) 50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,8 +52,8 @@
     stroke: #ffffff;
   }
   45%, 90% {
-    fill: #22c55e;
-    stroke: #22c55e;
+    fill: var(--brand-green);
+    stroke: var(--brand-green);
   }
   95%, 100% {
     fill: #ffffff;
@@ -63,15 +63,15 @@
 
 @keyframes colorSwap2 {
   0%, 40% {
-    fill: #22c55e;
-    stroke: #22c55e;
+    fill: var(--brand-green);
+    stroke: var(--brand-green);
   }
   45%, 90% {
     fill: #ffffff;
     stroke: #ffffff;
   }
   95%, 100% {
-    fill: #22c55e;
-    stroke: #22c55e;
+    fill: var(--brand-green);
+    stroke: var(--brand-green);
   }
 }
