@@ -104,15 +104,6 @@ export const metadata: Metadata = {
     title: "Nested United | خدمات تقنية، عقارات، تسويق، فعاليات – جدة، السعودية",
     description:
       "Nested United — نظام بيئي متكامل من العلامات التجارية المتخصصة: JoyNest للفعاليات، TechNest للتقنية، OpNest للعقارات، PrintNest للطباعة والتسويق، TheNest للضيافة. خدماتنا في جدة والمملكة العربية السعودية.",
-    images: [
-      {
-        url: "https://nestedunited.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Nested United – From Operations to Growth | جدة، السعودية",
-        type: "image/png",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -120,7 +111,6 @@ export const metadata: Metadata = {
     title: "Nested United | خدمات متكاملة في جدة – تقنية، عقارات، تسويق، فعاليات",
     description:
       "نظام بيئي متكامل من العلامات التجارية المتخصصة. خدمات تقنية، إدارة عقارات، تصميم، طباعة، تنظيم فعاليات في جدة والسعودية.",
-    images: ["https://nestedunited.com/og-image.png"],
     creator: "@nestedunited",
   },
   robots: {

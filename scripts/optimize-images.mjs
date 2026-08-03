@@ -1,3 +1,4 @@
+/* eslint-disable */
 import sharp from "sharp";
 import { readdir, stat } from "fs/promises";
 import { join, extname } from "path";

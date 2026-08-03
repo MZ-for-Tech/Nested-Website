@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "./MobileHeroClusters.module.css";
 import ClaudeIcon from "../IconCollage/ClaudeIcon";
 import GeminiIcon from "../IconCollage/GeminiIcon";
-import BowlsIcon from "../IconCollage/BowlsIcon";
 import LinesIcon from "../IconCollage/LinesIcon";
 import SquareIcon from "../IconCollage/SquareIcon";
 import TiktokIcon from "../IconCollage/TiktokIcon";
