@@ -1,22 +1,22 @@
 .topCluster {
   position: absolute;
-  top: 160px;
-  right: 20px;
-  width: 140px;
+  top: 100px;
+  right: 16px;
+  width: 132px;
   height: 90px;
   z-index: 10;
-  transform: scale(1.3);
+  transform: scale(1.1);
   transform-origin: right top;
 }
 
 .bottomCluster {
   position: absolute;
-  top: 60%;
-  right: 20px;
+  top: 58%;
+  right: 16px;
   width: 140px;
   height: 180px;
   z-index: 10;
-  transform: scale(1.3);
+  transform: scale(1.1);
   transform-origin: right center;
 }
 
@@ -33,4 +33,17 @@
   width: 100%;
   height: 100%;
   display: block;
+}
+
+/* ── RTL (Arabic) — mirror clusters to left side ── */
+:global([dir="rtl"]) .topCluster {
+  right: auto;
+  left: 16px;
+  transform-origin: left top;
+}
+
+:global([dir="rtl"]) .bottomCluster {
+  right: auto;
+  left: 16px;
+  transform-origin: left center;
 }
