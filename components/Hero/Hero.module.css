@@ -336,7 +336,8 @@
   :global([dir="rtl"]) .content {
     /* push the block to the right, clearing the left-side cluster */
     margin-left: 155px;
-    margin-right: 20px;
+    /* leave room for the sideText on the right edge */
+    margin-right: 50px;
     padding-left: 0;
     max-width: unset;
     text-align: right;
