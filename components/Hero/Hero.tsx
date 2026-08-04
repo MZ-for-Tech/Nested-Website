@@ -57,15 +57,15 @@ export default function Hero() {
         <div className={`${styles.content} ${styles.animHeading}`}>
           <h1 className={styles.heading}>
             {lang === "ar" ? (
-              // Arabic: static text (no typewriter)
+              // Arabic: static heading
               "ابدأ مشروعك\nمعنا"
             ) : isMobile ? (
               // Mobile English: static text
               "Start your project\nwith us"
             ) : (
-              // Desktop English: typewriter effect
+              // Desktop English: typewriter cycles between heading & subtitle
               <TypewriterHeading
-                phrases={["Start your project\nwith us", "Grow your business\nwith us"]}
+                phrases={["Start your project\nwith us", "From Operations to Growth."]}
                 typingSpeed={55}
                 deletingSpeed={30}
                 pauseAfterType={2200}
@@ -73,9 +73,10 @@ export default function Hero() {
               />
             )}
           </h1>
-          <p className={styles.subtitle}>
-            {lang === "ar" ? "من العمليات إلى النمو." : "From Operations to Growth."}
-          </p>
+          {/* Subtitle — Arabic only; EN subtitle is part of the typewriter */}
+          {lang === "ar" && (
+            <p className={styles.subtitle}>من العمليات إلى النمو.</p>
+          )}
         </div>
 
         {/* Collage — conditionally render desktop or mobile version */}
