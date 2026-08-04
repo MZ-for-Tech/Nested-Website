@@ -253,7 +253,7 @@
   .logo {
     position: absolute;
     top: 20px;
-    left: 30px;
+    left: 12px;
     width: 200px;
     flex-shrink: 0;
   }
