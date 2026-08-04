@@ -6,6 +6,7 @@ import styles from "./Hero.module.css";
 import IconCollage from "../IconCollage/IconCollage";
 import { TopRightCluster, BottomRightCluster } from "./MobileHeroClusters";
 import { useLanguage } from "@/contexts/LanguageContext";
+import TypewriterHeading from "./TypewriterHeading";
 
 export default function Hero() {
   const { tr, lang } = useLanguage();
@@ -55,7 +56,22 @@ export default function Hero() {
         {/* Text Content */}
         <div className={`${styles.content} ${styles.animHeading}`}>
           <h1 className={styles.heading}>
-            {lang === "ar" ? "ابدأ مشروعك\nمعنا" : "Start your project\nwith us"}
+            {lang === "ar" ? (
+              // Arabic: static text (no typewriter)
+              "ابدأ مشروعك\nمعنا"
+            ) : isMobile ? (
+              // Mobile English: static text
+              "Start your project\nwith us"
+            ) : (
+              // Desktop English: typewriter effect
+              <TypewriterHeading
+                phrases={["Start your project\nwith us", "Grow your business\nwith us"]}
+                typingSpeed={55}
+                deletingSpeed={30}
+                pauseAfterType={2200}
+                pauseAfterDelete={400}
+              />
+            )}
           </h1>
           <p className={styles.subtitle}>
             {lang === "ar" ? "من العمليات إلى النمو." : "From Operations to Growth."}

@@ -151,7 +151,7 @@ export const translations = {
     about: {
       tickerText: "Nested United • حيث تتشكّل الأفكار •",
       tag: "من نحن",
-      headingLine1: "عن",
+      headingLine1: "عنـ",
       headingAccent: "NESTED\nUNITED",
       text: "Nested United شركة متخصصة في تشغيل المشاريع وتطويرها، تساعد الشركات على رفع كفاءة أعمالها من خلال حلول متكاملة في العمليات والضيافة والتقنية والتسويق وتجربة العملاء.",
     },

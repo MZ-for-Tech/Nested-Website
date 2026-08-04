@@ -1,19 +1,20 @@
+
 import sharp from "sharp";
 import { writeFile, stat } from "fs/promises";
 
 const targets = [
-  { src: "public/ASSETS/pics/hq.png",       dest: "public/ASSETS/pics/hq.webp",       quality: 80 },
-  { src: "public/ASSETS/pics/hq2.png",      dest: "public/ASSETS/pics/hq2.webp",      quality: 80 },
+  { src: "public/ASSETS/pics/hq.png", dest: "public/ASSETS/pics/hq.webp", quality: 80 },
+  { src: "public/ASSETS/pics/hq2.png", dest: "public/ASSETS/pics/hq2.webp", quality: 80 },
   { src: "public/ASSETS/pics/building.png", dest: "public/ASSETS/pics/building.webp", quality: 82 },
-  { src: "public/ASSETS/pics/hand.png",     dest: "public/ASSETS/pics/hand.webp",     quality: 82 },
-  { src: "public/ASSETS/par-logos/1.png",   dest: "public/ASSETS/par-logos/1.webp",   quality: 85 },
-  { src: "public/ASSETS/par-logos/2.png",   dest: "public/ASSETS/par-logos/2.webp",   quality: 85 },
-  { src: "public/ASSETS/par-logos/3.png",   dest: "public/ASSETS/par-logos/3.webp",   quality: 85 },
-  { src: "public/ASSETS/par-logos/4.png",   dest: "public/ASSETS/par-logos/4.webp",   quality: 85 },
-  { src: "public/ASSETS/par-logos/5.png",   dest: "public/ASSETS/par-logos/5.webp",   quality: 85 },
-  { src: "public/ASSETS/par-logos/6.png",   dest: "public/ASSETS/par-logos/6.webp",   quality: 85 },
-  { src: "public/ASSETS/par-logos/7.png",   dest: "public/ASSETS/par-logos/7.webp",   quality: 85 },
-  { src: "public/ASSETS/par-logos/8.png",   dest: "public/ASSETS/par-logos/8.webp",   quality: 85 },
+  { src: "public/ASSETS/pics/hand.png", dest: "public/ASSETS/pics/hand.webp", quality: 82 },
+  { src: "public/ASSETS/par-logos/1.png", dest: "public/ASSETS/par-logos/1.webp", quality: 85 },
+  { src: "public/ASSETS/par-logos/2.png", dest: "public/ASSETS/par-logos/2.webp", quality: 85 },
+  { src: "public/ASSETS/par-logos/3.png", dest: "public/ASSETS/par-logos/3.webp", quality: 85 },
+  { src: "public/ASSETS/par-logos/4.png", dest: "public/ASSETS/par-logos/4.webp", quality: 85 },
+  { src: "public/ASSETS/par-logos/5.png", dest: "public/ASSETS/par-logos/5.webp", quality: 85 },
+  { src: "public/ASSETS/par-logos/6.png", dest: "public/ASSETS/par-logos/6.webp", quality: 85 },
+  { src: "public/ASSETS/par-logos/7.png", dest: "public/ASSETS/par-logos/7.webp", quality: 85 },
+  { src: "public/ASSETS/par-logos/8.png", dest: "public/ASSETS/par-logos/8.webp", quality: 85 },
 ];
 
 async function fileSize(path) {
