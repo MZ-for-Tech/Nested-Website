@@ -353,4 +353,21 @@
     left: auto;
     right: 10px;
   }
+
+  /* AR building — mirror to left side */
+  :global([dir="rtl"]) .rightColumn {
+    right: auto;
+    left: 0;
+  }
+
+  :global([dir="rtl"]) .rightImage {
+    /* flip horizontally so building faces the right direction */
+    transform: scaleX(-1);
+    object-position: top center;
+  }
+
+  /* AR clip-path — mirror diagonal: cuts from right side */
+  :global([dir="rtl"]) .leftColumn {
+    clip-path: polygon(0 0, 100% 0, 100% 62%, 0 100%);
+  }
 }
