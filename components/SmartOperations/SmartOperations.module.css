@@ -173,6 +173,19 @@
   left: 0;
 }
 
+/* ── RTL (Arabic) Support ──
+   letter-spacing breaks Arabic cursive joins in WebKit (chopped/متقطع look on iOS);
+   line-height 0.95 clips Arabic glyphs. */
+:global([dir="rtl"]) .heading {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+:global([dir="rtl"]) .modalTitle,
+:global([dir="rtl"]) .successTitle {
+  letter-spacing: 0;
+}
+
 :global([dir="rtl"]) .buttonIcon {
   transform: scaleX(-1);
 }

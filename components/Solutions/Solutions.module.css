@@ -340,3 +340,23 @@
 .card:hover .iconWrapper svg {
   transform: scale(1.15) translateY(-2px);
 }
+
+/* ── RTL (Arabic) Support ──
+   letter-spacing on Arabic breaks the cursive joins in WebKit (chopped/متقطع look on iOS).
+   Neutralize it for Arabic + relax tight line-heights that clip glyphs. */
+:global([dir="rtl"]) .tag {
+  letter-spacing: 0;
+}
+
+:global([dir="rtl"]) .heading {
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+:global([dir="rtl"]) .cardTitle {
+  letter-spacing: 0;
+}
+
+:global([dir="rtl"]) .sideText {
+  letter-spacing: 0;
+}

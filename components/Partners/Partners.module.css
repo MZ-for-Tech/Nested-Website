@@ -118,3 +118,9 @@
     box-sizing: border-box;
   }
 }
+
+/* ── RTL (Arabic) Support ──
+   letter-spacing breaks Arabic cursive joins in WebKit (chopped/متقطع look on iOS). */
+:global([dir="rtl"]) .heading {
+  letter-spacing: 0;
+}

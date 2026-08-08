@@ -42,6 +42,22 @@ body {
   font-family: var(--font-arabic), "IBM Plex Sans Arabic", sans-serif;
 }
 
+/*
+  RTL headings: Red Hat Display is latin-only — on iOS Safari Arabic glyphs
+  fell back to the system font but were clipped to Red Hat's line box
+  (chopped / متقطع look). Use the Arabic font + clamp weight to 700
+  (IBM Plex Sans Arabic max weight) to avoid iOS synthetic bold artifacts.
+*/
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: var(--font-arabic), "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+}
+
 /* Ticker animation reverses in RTL */
 [dir="rtl"] .tickerContent {
   animation-direction: reverse;

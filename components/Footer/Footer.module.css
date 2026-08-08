@@ -246,6 +246,13 @@
   padding: 4rem 80px 4rem 40px;
 }
 
+/* letter-spacing breaks Arabic cursive joins in WebKit (chopped/متقطع look on iOS);
+   line-height 1.1 clips Arabic glyphs on iOS. */
+:global([dir="rtl"]) .heading {
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
 @media (max-width: 768px) {
   :global([dir="rtl"]) .leftColumn {
     padding: 3rem 24px 1rem 24px;

@@ -365,3 +365,11 @@
     height: 28px;
   }
 }
+
+/* ── RTL (Arabic) Support ──
+   letter-spacing breaks Arabic cursive joins in WebKit (chopped/متقطع look on iOS). */
+:global([dir="rtl"]) .heading,
+:global([dir="rtl"]) .signatureTitle,
+:global([dir="rtl"]) .cardTitle {
+  letter-spacing: 0;
+}
